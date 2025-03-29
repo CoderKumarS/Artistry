@@ -7,7 +7,7 @@ use App\Http\Controllers\ArtistController;
 
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index')->name('home');
+    Route::get('/home', 'index')->name('home');
     Route::post('/gallery', 'gallery')->name('gallery');
     Route::get('/artist', 'artist_index')->name('artists.index');
     Route::post('/about', 'about')->name('about');
