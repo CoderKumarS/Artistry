@@ -1,5 +1,5 @@
-<nav class="bg-white dark:bg-gray-800 shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="bg-white dark:bg-gray-800 shadow px-16">
+    <div class="max-w-7xl mx-auto ">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Brand Logo -->
@@ -22,14 +22,12 @@
             </div>
             <!-- Buttons -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
-                <button
-                    class="text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <x-icons id="search-button" type="feature">
                     <x-lucide-search class="w-6 h-6 text-gray-500 " />
-                </button>
-                <button id="theme-toggle"
-                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                </x-icons>
+                <x-icons id="theme-toggle" type="feature">
                     <x-lucide-moon class="w-6 h-6 text-gray-500" />
-                </button>
+                </x-icons>
                 <a href="{{ route('login') }}"
                     class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium grid grid-cols-2 items-center gap-1">
                     <span>Login</span>

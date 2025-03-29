@@ -31,7 +31,7 @@
         <div
             class="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-16 md:pt-24
             id="hero-section">
-            <div class="container-full px-8 md:px-6">
+            <div class="container-full px-16 md:px-16">
                 <div class="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
                     <div id="hero-text" class="flex flex-col justify-center space-y-4">
                         <div class="space-y-2">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div
-                class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent dark:from-gray-900 dark:to-transparent">
+                class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-white/0 dark:from-gray-900 dark:to-gray-900/0">
             </div>
         </div>
 
