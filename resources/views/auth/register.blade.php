@@ -2,6 +2,18 @@
 @section('title', 'Register - Online Art Gallery')
 @section('content')
     <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+        @if ($errors->any())
+            <div class="w-full max-w-md mb-6">
+                <div
+                    class="bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-200 border border-red-400 dark:border-red-600 rounded-lg p-4">
+                    <ul class="list-disc list-inside">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
         <div
             class="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg transform transition-all duration-500 hover:scale-105">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 text-center">Register</h2>

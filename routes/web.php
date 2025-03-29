@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArtistController;
 
-// Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::post('/gallery', 'gallery')->name('gallery');
@@ -20,5 +21,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::get('/forgot-password', 'showForgotPasswordForm')->name('password.request');
     Route::post('/password/email', 'sendResetLinkEmail')->name('password.email');
+});
+Route::controller(ArtistController::class)->group(function () {
+    Route::get('/dashboard', 'showDashboard')->name('dashboard');
 });
 

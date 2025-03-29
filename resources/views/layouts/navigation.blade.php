@@ -25,8 +25,9 @@
                 <button
                     class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Search</button>
                 <button id="theme-toggle"
-                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Toggle
-                    Theme</button>
+                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <x-lucide-activity class="w-6 h-6 text-gray-500" />
+                </button>
                 <a href="{{ route('login') }}"
                     class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
             </div>
