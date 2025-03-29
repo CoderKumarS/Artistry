@@ -23,13 +23,18 @@
             <!-- Buttons -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
                 <button
-                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Search</button>
+                    class="text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <x-lucide-search class="w-6 h-6 text-gray-500 " />
+                </button>
                 <button id="theme-toggle"
                     class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    <x-lucide-activity class="w-6 h-6 text-gray-500" />
+                    <x-lucide-moon class="w-6 h-6 text-gray-500" />
                 </button>
                 <a href="{{ route('login') }}"
-                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                    class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium grid grid-cols-2 items-center gap-1">
+                    <span>Login</span>
+                    <x-lucide-log-in class="w-6 h-6 text-gray-500" />
+                </a>
             </div>
             <!-- Mobile Menu Button -->
             <div class="-mr-2 flex items-center sm:hidden">
