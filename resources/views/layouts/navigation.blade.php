@@ -7,17 +7,12 @@
                     <a href="{{ route('home') }}" class="text-xl font-bold text-gray-900 dark:text-white">Artistry</a>
                 </div>
                 <!-- Navigation Links -->
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="{{ route('home') }}"
-                        class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="#"
-                        class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
-                    <a href="#"
-                        class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Artists</a>
-                    <a href="#"
-                        class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    <a href="#"
-                        class="text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                <div class="hidden  items-center sm:ml-6 sm:flex sm:space-x-8">
+                    <x-nav-link href="/" :active="request()->is('/')" type="link">Home</x-nav-link>
+                    <x-nav-link href="/gallery" :active="request()->is('gallery')" type="link">Gallery</x-nav-link>
+                    <x-nav-link href="/artists" :active="request()->is('artists')" type="link">Artists</x-nav-link>
+                    <x-nav-link href="/about" :active="request()->is('about')" type="link">About</x-nav-link>
+                    <x-nav-link href="/contact" :active="request()->is('contact')" type="link">Contact</x-nav-link>
                 </div>
             </div>
             <!-- Buttons -->

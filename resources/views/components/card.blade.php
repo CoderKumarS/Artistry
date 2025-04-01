@@ -58,18 +58,40 @@
         </div>
     @break
 
-    @default
-        <div {{ $attributes->merge(['class' => 'card border rounded-lg shadow-md overflow-hidden']) }}>
-            <div class="p-4 bg-white dark:bg-gray-800">
-                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $art['title'] ?? 'Default Title' }}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                    {{ $art['description'] ?? 'Default description goes here.' }}</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <a href="{{ url('/details/' . ($art['id'] ?? '#')) }}" class="text-blue-500 hover:underline text-sm">
-                        Learn More
-                    </a>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">{{ $art['date'] ?? 'N/A' }}</span>
+    @case('artwork')
+        <div {{ $attributes->merge(['class' => 'card overflow-hidden h-full transition-all duration-300 hover:shadow-lg cursor-pointer']) }}
+            onclick="window.location.href={{ url('/paintings/' . $art['id'] ?? '#') }}">
+            <div class="p-0">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img src="{{ $art['image'] ?? '/placeholder.svg' }}" alt="{{ $art['title'] ?? 'Untitled' }}"
+                        class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                 </div>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold">{{ $art['title'] ?? 'Untitled' }}</h3>
+                <a href="{{ url('/artists/' . ($art['artistId'] ?? '#')) }}">
+                    <p class="text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))]">
+                        by {{ $art['artist'] ?? 'Unknown Artist' }}
+                    </p>
+                </a>
+                <div class="flex items-center justify-between mt-2">
+                    <div class="flex items-center">
+                        <x-lucide-star class="h-4 w-4 fill-[hsl(var(--primary))] text-[hsl(var(--primary))] mr-1" />
+                        <span class="text-sm">{{ $art['rating'] ?? '0' }}</span>
+                    </div>
+                    <p class="font-medium">₹ {{ $art['price'] ?? 'N/A' }}</p>
+                </div>
+            </div>
+        </div>
+    @break
+
+    @default
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <img src="{{ $art['image'] }}" alt="{{ $art['title'] }}" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $art['title'] }}</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{ $art['artist'] }}</p>
+                <p class="mt-2 text-gray-700 dark:text-gray-300">{{ $art['description'] }}</p>
             </div>
         </div>
     @break
