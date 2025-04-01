@@ -3,7 +3,7 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div class="space-y-4">
                 <h3 class="text-xl font-bold">Artistry</h3>
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-[hsl(var(--muted-foreground))]">
                     Discover extraordinary art from talented artists around the world. Connect, collect, and celebrate
                     creativity.
                 </p>
@@ -29,77 +29,57 @@
 
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold">Quick Links</h3>
+                @php
+                    $links = [
+                        ['route' => route('home'), 'text' => 'Browse Gallery'],
+                        ['route' => route('home'), 'text' => 'Explore Artists'],
+                        ['route' => route('home'), 'text' => 'About Us'],
+                        ['route' => route('home'), 'text' => 'Contact'],
+                        ['route' => route('home'), 'text' => 'Art Blog'],
+                    ];
+                @endphp
                 <ul class="space-y-2 text-sm">
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Browse Gallery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Explore Artists
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Art Blog
-                        </a>
-                    </li>
+                    @foreach ($links as $link)
+                        <li>
+                            <a href="{{ $link['route'] }}" class="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]">
+                                {{ $link['text'] }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
-
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold">For Artists</h3>
+                @php
+                    $resources = [
+                        ['route' => route('home'), 'text' => 'Join as an Artist'],
+                        ['route' => route('login'), 'text' => 'Artist Login'],
+                        ['route' => route('home'), 'text' => 'Artist Dashboard'],
+                        ['route' => route('home'), 'text' => 'Terms for Artists'],
+                        ['route' => route('home'), 'text' => 'FAQ'],
+                    ];
+                @endphp
                 <ul class="space-y-2 text-sm">
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Join as an Artist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('login') }}" class="text-muted-foreground hover:text-foreground">
-                            Artist Login
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Artist Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            Terms for Artists
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted-foreground hover:text-foreground">
-                            FAQ
-                        </a>
-                    </li>
+                    @foreach ($resources as $resource)
+                        <li>
+                            <a href="{{ $resource['route'] }}" class="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]">
+                                {{ $resource['text'] }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
-
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold">Newsletter</h3>
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-[hsl(var(--muted-foreground))]">
                     Subscribe to our newsletter for the latest art updates and exclusive offers.
                 </p>
                 <form action="#" method="POST" class="flex space-x-2">
                     @csrf
                     <input type="email" name="email" placeholder="Your email"
-                        class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 max-w-[220px]">
+                        class="flex h-9 w-full rounded-md border border-input bg-[hsl(var(--background))] px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 max-w-[220px]">
                     <button type="submit"
-                        class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black dark:bg-blue-600 text-white dark:text-blue-100 hover:bg-primary/90 h-9 px-4 py-2">
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black dark:bg-blue-600 text-white dark:text-blue-100 hover:bg-[hsl(var(--primary))]/90 h-9 px-4 py-2">
                         Subscribe
                     </button>
                 </form>
@@ -109,19 +89,22 @@
         <hr class="my-8 border-t border-border">
 
         <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p class="text-center text-sm text-muted-foreground md:text-left">
+            <p class="text-center text-sm text-[hsl(var(--muted-foreground))] md:text-left">
                 &copy; {{ date('Y') }} Artistry. All rights reserved.
             </p>
-            <div class="flex gap-4 text-sm text-muted-foreground">
-                <a href="#" class="hover:text-foreground">
-                    Privacy Policy
-                </a>
-                <a href="#" class="hover:text-foreground">
-                    Terms of Service
-                </a>
-                <a href="#" class="hover:text-foreground">
-                    Cookie Policy
-                </a>
+            <div class="flex gap-4 text-sm text-[hsl(var(--muted-foreground))]">
+                @php
+                    $rights = [
+                        ['route' => route('home'), 'text' => 'Privacy Policy'],
+                        ['route' => route('home'), 'text' => 'Terms of Service'],
+                        ['route' => route('home'), 'text' => 'Cookie Policy'],
+                    ];
+                @endphp
+                @foreach ($rights as $right)
+                    <a href="{{ $right['route'] }}" class="hover:text-[hsl(var(--foreground))]">
+                        {{ $right['text'] }}
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
