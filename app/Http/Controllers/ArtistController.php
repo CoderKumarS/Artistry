@@ -15,4 +15,8 @@ class ArtistController extends Controller
             return redirect()->route('login')->with('error', 'Please login to access the dashboard.');
         }
     }
+    public function index()
+    {
+        return view('artists'); // Ensure 'artists.blade.php' exists in resources/views
+    }
 }
