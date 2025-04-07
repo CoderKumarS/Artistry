@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Online Art Gallery')
-{{-- @section('content')
+<!-- {{-- @section('content')
 
-@endsection --}}
+@endsection --}} -->
 @section('content')
     <!-- Hero Section -->
     <div class="flex min-h-screen flex-col">
