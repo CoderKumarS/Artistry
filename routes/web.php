@@ -26,3 +26,5 @@ Route::controller(ArtistController::class)->group(function () {
     Route::get('/dashboard', 'showDashboard')->name('dashboard');
 });
 
+Route::get('/artists', [ArtistController::class, 'index'])->name('artists');
+
