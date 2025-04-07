@@ -24,7 +24,7 @@
 </head>
 
 <body class="font-sans antialiased bg-[#FDFDFC] dark:bg-[#0a0a0a]">
-    <div class="relative flex min-h-screen flex-col">
+    <div class="relative flex min-h-screen flex-col" id="app">
         @include('layouts.navigation')
 
         <main class="flex-1">
