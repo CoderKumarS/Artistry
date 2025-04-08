@@ -9,7 +9,7 @@ use App\Http\Controllers\ArtistController;
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/gallery', 'gallery')->name('gallery');
-    Route::get('/artists', 'artists')->name('artists');
+    // Route::get('/artists', 'artists')->name('artists');
     Route::get('/about', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
 });
