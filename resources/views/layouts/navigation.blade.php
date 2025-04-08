@@ -36,10 +36,10 @@
             <!-- Right: Action Icons and Login Button -->
             <div class="hidden md:flex flex-shrink-0 items-center space-x-4">
                 <button id="search-button"
-                        class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
+                        class="cursor-pointer text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
                     <i data-lucide="search" id="search-icon"></i>
                 </button>
-                <button id="theme-toggle" class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
+                <button id="theme-toggle" class="cursor-pointer text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
                     <span data-lucide="moon" id="theme-icon"></span>
                 </button>
                 <a href="{{ route('login') }}"
