@@ -17,6 +17,6 @@ class ArtistController extends Controller
     }
     public function index()
     {
-        return view('pages.artists'); // Ensure 'artists.blade.php' exists in resources/views
+        return view('pages.artists');
     }
 }
