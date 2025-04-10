@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 class ArtistController extends Controller
 {
     // Handle the artist index logic
@@ -18,5 +18,15 @@ class ArtistController extends Controller
     public function index()
     {
         return view('pages.artists');
+    }
+    public function profile($id)
+    {
+        $artist = User::findUserById($id);
+
+        if (!$artist) {
+            return redirect()->back()->with('error', 'User not found.');
+        }
+
+        return view('pages.profile', ['artist' => $artist]);
     }
 }
