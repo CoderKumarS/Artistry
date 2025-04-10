@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function findUserById($id): array
+    {
+        // Logic to find a user by ID
+        $user = User::find($id);
+        if (!$user) {
+            return [];
+        }
+        return [
+            'name' => $user->name,
+            'email' => $user->email
+        ];
+    }
 }
