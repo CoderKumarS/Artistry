@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artwork;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $recent = Artwork::with('artist')->latest()->take(6)->get();
+        return view('home')->with('recent', $recent);
     }
     public function about()
     {
@@ -18,12 +20,9 @@ class HomeController extends Controller
     {
         return view('pages.contact');
     }
-    public function artists()
-    {
-        return view('pages.artists');
-    }
     public function gallery()
     {
-        return view('pages.gallery');
+        $artworks = Artwork::with('artist')->get(); // Eager load the artist relationship
+        return view('pages.gallery')->with('artworks', $artworks);
     }
 }

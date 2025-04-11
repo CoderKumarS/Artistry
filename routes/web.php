@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\ArtworkController;
 
 
 Route::controller(HomeController::class)->group(function () {
@@ -27,3 +28,4 @@ Route::controller(ArtistController::class)->group(function () {
     Route::get('/artist/{id?}', 'profile')->name('artist.profile');
 });
 
+Route::resource('/artworks', ArtworkController::class);

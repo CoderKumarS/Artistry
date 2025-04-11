@@ -60,7 +60,7 @@
 
 <div class="w-full">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        @foreach ($recentPaintings as $painting)
+        @foreach ($recent as $painting)
             <x-card :art="$painting" type='recent' />
         @endforeach
     </div>

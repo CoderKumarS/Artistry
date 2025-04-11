@@ -17,7 +17,8 @@ class ArtistController extends Controller
     }
     public function index()
     {
-        return view('pages.artists');
+        $artists = User::all();
+        return view('pages.artists')->with('artists', $artists);
     }
     public function profile($id)
     {

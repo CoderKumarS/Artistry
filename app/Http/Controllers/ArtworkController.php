@@ -12,7 +12,9 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        //
+        // Fetch all artworks from the database
+        $artworks = Artwork::with('artist')->get();
+        return $artworks;
     }
 
     /**

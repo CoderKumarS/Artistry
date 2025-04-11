@@ -22,16 +22,11 @@
             <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 mb-8">
                 Explore our latest masterpieces added to the collection
             </p>
-            @include('landing.recent')
-            <a href="#"
+            @include('landing.recent', ['recent' => $recent])
+            <a href="/gallery"
                 class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow hover:bg-[hsl(var(--primary))]/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
                 View All Artwork
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-arrow-right ml-2">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                </svg>
+                <x-lucide-arrow-right class="w-4 h-4 font-extrabold" />
             </a>
         </div>
     </section>
