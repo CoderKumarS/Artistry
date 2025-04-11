@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Call the ArtworkSeeder to seed the artworks table
+        $this->call([
+            UserSeeder::class,
+            ArtworkSeeder::class
         ]);
     }
 }

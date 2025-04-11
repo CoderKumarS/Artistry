@@ -1,0 +1,137 @@
+[
+    {
+        "title": "Sunset Horizon",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.8,
+        "price": 1200,
+        "category": "Landscape",
+        "year": 2023
+    },
+    {
+        "title": "Urban Reflections",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.5,
+        "price": 950,
+        "category": "Urban",
+        "year": 2022
+    },
+    {
+        "title": "Garden of Dreams",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.9,
+        "price": 1500,
+        "category": "Abstract",
+        "year": 2023
+    },
+    {
+        "title": "Digital Cosmos",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.7,
+        "price": 850,
+        "category": "Digital",
+        "year": 2023
+    },
+    {
+        "title": "Mountain Serenity",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.6,
+        "price": 1100,
+        "category": "Landscape",
+        "year": 2022
+    },
+    {
+        "title": "Abstract Emotions",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.4,
+        "price": 780,
+        "category": "Abstract",
+        "year": 2021
+    },
+    {
+        "title": "Cityscape at Night",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.8,
+        "price": 1300,
+        "category": "Urban",
+        "year": 2022
+    },
+    {
+        "title": "Floral Impressions",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.7,
+        "price": 920,
+        "category": "Still Life",
+        "year": 2023
+    },
+    {
+        "title": "Ocean Waves",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.9,
+        "price": 1400,
+        "category": "Landscape",
+        "year": 2023
+    },
+    {
+        "title": "Techno Vibes",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.6,
+        "price": 880,
+        "category": "Digital",
+        "year": 2022
+    },
+    {
+        "title": "Nature's Palette",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.5,
+        "price": 1020,
+        "category": "Landscape",
+        "year": 2023
+    },
+    {
+        "title": "City Lights",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.3,
+        "price": 760,
+        "category": "Urban",
+        "year": 2021
+    },
+    {
+        "title": "Whimsical Dreams",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.8,
+        "price": 1250,
+        "category": "Abstract",
+        "year": 2023
+    },
+    {
+        "title": "Still Life with Fruits",
+        "artistId": 2,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.7,
+        "price": 900,
+        "category": "Still Life",
+        "year": 2022
+    },
+    {
+        "title": "Abstract Waves",
+        "artistId": 1,
+        "image": "https://placehold.co/500x400",
+        "rating": 4.6,
+        "price": 1150,
+        "category": "Abstract",
+        "year": 2023
+    }
+]
