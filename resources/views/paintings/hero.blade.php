@@ -8,7 +8,7 @@
     <div class="space-y-6">
         <div>
             <h1 class="text-3xl font-bold">{{ $artwork['title'] ?? 'Untitled' }}</h1>
-            <a href="{{ url('/artists/' . ($artwork['artist']['id'] ?? '#')) }}">
+            <a href="{{ url('/artist/' . ($artwork['artist']['id'] ?? '#')) }}">
                 <p class="text-lg text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))]">by
                     {{ $artwork['artist']['user']['name'] ?? 'Unknown Artist' }}</p>
             </a>
@@ -35,8 +35,10 @@
         </div>
 
         <div class="space-y-2">
-            <p class="text-2xl font-bold">{{ $artwork['price'] ?? 'Price not available' }}</p>
-            <button class="w-full sm:w-auto">Contact Gallery</button>
+            <p class="text-2xl font-bold">₹ {{ $artwork['price'] ?? 'Price not available' }}</p>
+            <a href="{{ url('/contact/') }}">
+                <x-button type='submit'>Contact Gallery</x-button>
+            </a>
         </div>
 
         <hr />
@@ -47,22 +49,20 @@
             </p>
 
             <div class="grid grid-cols-2 gap-4 pt-2">
-                <div>
-                    <p class="text-sm text-[hsl(var(--muted-foreground))]">Year</p>
-                    <p>{{ $artwork['year'] ?? 'N/A' }}</p>
-                </div>
-                <div>
-                    <p class="text-sm text-[hsl(var(--muted-foreground))]">Medium</p>
-                    <p>{{ $artwork['medium'] ?? 'N/A' }}</p>
-                </div>
-                <div>
-                    <p class="text-sm text-[hsl(var(--muted-foreground))]">Dimensions</p>
-                    <p>{{ $artwork['dimension'] ?? 'N/A' }}</p>
-                </div>
-                <div>
-                    <p class="text-sm text-[hsl(var(--muted-foreground))]">Category</p>
-                    <p>{{ $artwork['category'] ?? 'N/A' }}</p>
-                </div>
+                @php
+                    $fields = [
+                        ['name' => 'Year', 'value' => $artwork['year'] ?? 'N/A'],
+                        ['name' => 'Medium', 'value' => $artwork['medium'] ?? 'N/A'],
+                        ['name' => 'Dimensions', 'value' => $artwork['dimension'] ?? 'N/A'],
+                        ['name' => 'Category', 'value' => $artwork['category'] ?? 'N/A'],
+                    ];
+                @endphp
+                @foreach ($fields as $field)
+                    <div>
+                        <p class="text-sm text-[hsl(var(--muted-foreground))]">{{ $field['name'] }}</p>
+                        <p>{{ $field['value'] }}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
 
@@ -72,8 +72,8 @@
             <h2 class="text-xl font-semibold">About the Artist</h2>
             <p class="text-[hsl(var(--muted-foreground))]">
                 {{ $artwork['artist']['description'] ?? 'Bio not available' }}</p>
-            <a href="{{ url('/artists/' . ($artwork['artist']['id'] ?? '#')) }}">
-                <button class="btn btn-outline">View Artist Profile</button>
+            <a href="{{ url('/artist/' . ($artwork['artist']['id'] ?? '#')) }}">
+                <x-button type='secondary'>View Artist Profile</x-button>
             </a>
         </div>
     </div>

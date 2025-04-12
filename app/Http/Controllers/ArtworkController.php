@@ -40,7 +40,27 @@ class ArtworkController extends Controller
     {
         // Fetch the artwork with its artist
         $artwork = Artwork::with('artist.user')->find($artwork->id);
-        return view('paintings.index')->with('artwork', $artwork);
+        $likeArtworks = Artwork::with('artist.user')
+            ->where('id', '!=', $artwork->id)
+            ->where(function ($query) use ($artwork) {
+                $query->where('artistId', $artwork->artistId)
+                    ->orWhere('medium', $artwork->medium)
+                    ->orWhere('category', $artwork->category);
+            })
+            ->orderByDesc('rating') // Assuming 'rating' is a column in your database
+            ->take(3)
+            ->get();
+        if (!$artwork || !$artwork->artist) {
+            // Handle the case where the artwork or artist is not found
+            return response()->json(['message' => 'Artwork not found'], 404);
+        }
+        return view('paintings.index')->with(
+            [
+                'artwork' => $artwork,
+                'likeArtworks' => $likeArtworks
+            ]
+        );
+        // return response()->json(['likeArtwork' => $likeArtwork, 'artwork' => $artwork]);
     }
 
     /**

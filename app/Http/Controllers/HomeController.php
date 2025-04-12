@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $recent = Artwork::with('artist')->latest()->take(6)->get();
+        $recent = Artwork::with('artist.user')->latest()->take(6)->get();
         return view('home')->with('recent', $recent);
     }
     public function about()
@@ -22,7 +22,7 @@ class HomeController extends Controller
     }
     public function gallery()
     {
-        $artworks = Artwork::with('artist')->get(); // Eager load the artist relationship
+        $artworks = Artwork::with('artist.user')->get(); // Eager load the artist relationship
         return view('pages.gallery')->with('artworks', $artworks);
     }
 }

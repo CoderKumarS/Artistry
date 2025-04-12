@@ -19,10 +19,10 @@
                 @include('paintings.review')
             </div>
         </section>
-        <section class="container-full px-4 py-12 md:py-24">
-            <div class="mx-auto flex max-w-[78rem] flex-col items-center justify-center gap-4 text-center">
-                <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl">You May Also Like</h2>
-                @include('paintings.like')
+        <section class="mt-16">
+            <h2 class="text-2xl font-semibold mb-6">You May Also Like</h2>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                @include('paintings.like', ['likeArtworks' => $likeArtworks])
             </div>
         </section>
     </div>
