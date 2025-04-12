@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Artist;
+use App\Models\Artwork;
 class ArtistController extends Controller
 {
     // Handle the artist index logic
@@ -23,10 +24,17 @@ class ArtistController extends Controller
     public function profile($id)
     {
         $artist = Artist::with('user')->find($id);
-        if (!$artist) {
+        $artwork = Artwork::where('artistId', $id)->get();
+        if (!$artist || !$artwork) {
             return response()->json(['message' => 'Artwork not found'], 404);
         }
-        // return response()->json($artist);
-        return view('pages.profile', ['artist' => $artist]);
+        // return response()->json([
+        //     'artist' => $artist,
+        //     'artwork' => $artwork
+        // ]);
+        return view('pages.profile')->with([
+            'artist' => $artist,
+            'artwork' => $artwork
+        ]);
     }
 }

@@ -76,8 +76,8 @@
             onclick="window.location.href='{{ url('/artist/' . ($art['id'] ?? '#')) }}'">
             <img src="https://placehold.co/300x300" alt="Artist Image" class="w-full h-48 object-cover">
             <div class="p-4">
-                <h2 class="text-xl font-semibold mb-2">{{ $art['name'] }}</h2>
-                <p class="text-gray-600 dark:text-gray-400">{{ $art['email'] }}</p>
+                <h2 class="text-xl font-semibold mb-2">{{ $art['user']['name'] }}</h2>
+                <p class="text-gray-600 dark:text-gray-400">{{ $art['user']['email'] }}</p>
             </div>
         </div>
     @break
