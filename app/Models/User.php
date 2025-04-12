@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function artworks()
     {
-        return $this->hasMany(Artwork::class, 'artistId');
+        return $this->hasMany(Artist::class, 'userId');
     }
 
 }

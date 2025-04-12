@@ -8,6 +8,6 @@ class Artwork extends Model
 {
     public function artist()
     {
-        return $this->belongsTo(User::class, 'artistId');
+        return $this->belongsTo(Artist::class, 'artistId');
     }
 }

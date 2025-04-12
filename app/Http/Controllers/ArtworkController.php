@@ -39,7 +39,7 @@ class ArtworkController extends Controller
     public function show(Artwork $artwork)
     {
         // Fetch the artwork with its artist
-        $artwork = Artwork::with('artist')->find($artwork->id);
+        $artwork = Artwork::with('artist.user')->find($artwork->id);
         return view('paintings.index')->with('artwork', $artwork);
     }
 

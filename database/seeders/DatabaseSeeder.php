@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         // Call the ArtworkSeeder to seed the artworks table
         $this->call([
             UserSeeder::class,
-            ArtworkSeeder::class
+            ArtworkSeeder::class,
+            ArtistSeeder::class,
         ]);
     }
 }

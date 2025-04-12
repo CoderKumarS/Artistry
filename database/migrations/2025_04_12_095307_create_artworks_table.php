@@ -15,7 +15,10 @@ return new class extends Migration {
             $table->string('title');
             $table->unsignedBigInteger('artistId');
             $table->string('image');
+            $table->string('description');
             $table->decimal('rating', 2, 1);
+            $table->string('dimension', 50);
+            $table->string('medium');
             $table->decimal('price', 10, 2);
             $table->string('category');
             $table->year('year');

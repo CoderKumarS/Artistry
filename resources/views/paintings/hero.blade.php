@@ -1,6 +1,6 @@
 {{-- @dd($artwork) --}}
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-    <div class="relative aspect-[3/4] overflow-hidden rounded-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-4">
+    <div class="relative overflow-hidden rounded-lg">
         <img src="{{ $artwork['image'] ?? 'https://placehold.co/300x300' }}" alt="{{ $artwork['title'] ?? 'Untitled' }}"
             class="object-cover" />
     </div>
@@ -10,7 +10,7 @@
             <h1 class="text-3xl font-bold">{{ $artwork['title'] ?? 'Untitled' }}</h1>
             <a href="{{ url('/artists/' . ($artwork['artist']['id'] ?? '#')) }}">
                 <p class="text-lg text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))]">by
-                    {{ $artwork['artist']['name'] ?? 'Unknown Artist' }}</p>
+                    {{ $artwork['artist']['user']['name'] ?? 'Unknown Artist' }}</p>
             </a>
         </div>
 
@@ -57,7 +57,7 @@
                 </div>
                 <div>
                     <p class="text-sm text-[hsl(var(--muted-foreground))]">Dimensions</p>
-                    <p>{{ $artwork['dimensions'] ?? 'N/A' }}</p>
+                    <p>{{ $artwork['dimension'] ?? 'N/A' }}</p>
                 </div>
                 <div>
                     <p class="text-sm text-[hsl(var(--muted-foreground))]">Category</p>
@@ -70,7 +70,8 @@
 
         <div class="space-y-4">
             <h2 class="text-xl font-semibold">About the Artist</h2>
-            <p class="text-[hsl(var(--muted-foreground))]">{{ $artwork['artist']['bio'] ?? 'Bio not available' }}</p>
+            <p class="text-[hsl(var(--muted-foreground))]">
+                {{ $artwork['artist']['description'] ?? 'Bio not available' }}</p>
             <a href="{{ url('/artists/' . ($artwork['artist']['id'] ?? '#')) }}">
                 <button class="btn btn-outline">View Artist Profile</button>
             </a>

@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Sujal",
+        "email": "sujalkumar@lpu.in",
+        "password": "12345678"
+    },
+    {
+        "name": "Pushkar",
+        "email": "pushkarvarshney@lpu.in",
+        "password": "12345678"
+    },
+    {
+        "name": "Liam Johnson",
+        "email": "liam.johnson@example.com",
+        "password": "xYz123!@#"
+    },
+    {
+        "name": "Emma Brown",
+        "email": "emma.brown@example.com",
+        "password": "aBc456$%^"
+    },
+    {
+        "name": "Noah Davis",
+        "email": "noah.davis@example.com",
+        "password": "qWe789&*("
+    },
+    {
+        "name": "Olivia Wilson",
+        "email": "olivia.wilson@example.com",
+        "password": "zXc101!@#"
+    },
+    {
+        "name": "Elijah Moore",
+        "email": "elijah.moore@example.com",
+        "password": "vBn202$%^"
+    },
+    {
+        "name": "Sophia Taylor",
+        "email": "sophia.taylor@example.com",
+        "password": "mKl303&*("
+    },
+    {
+        "name": "James Anderson",
+        "email": "james.anderson@example.com",
+        "password": "pQr404!@#"
+    },
+    {
+        "name": "Isabella Thomas",
+        "email": "isabella.thomas@example.com",
+        "password": "uIo505$%^"
+    },
+    {
+        "name": "Benjamin Jackson",
+        "email": "benjamin.jackson@example.com",
+        "password": "tYu606&*("
+    },
+    {
+        "name": "Mia White",
+        "email": "mia.white@example.com",
+        "password": "rTy707!@#"
+    },
+    {
+        "name": "Lucas Harris",
+        "email": "lucas.harris@example.com",
+        "password": "eDf808$%^"
+    },
+    {
+        "name": "Amelia Martin",
+        "email": "amelia.martin@example.com",
+        "password": "wGh909&*("
+    },
+    {
+        "name": "Mason Thompson",
+        "email": "mason.thompson@example.com",
+        "password": "qAz010!@#"
+    },
+    {
+        "name": "Charlotte Garcia",
+        "email": "charlotte.garcia@example.com",
+        "password": "sXc111$%^"
+    },
+    {
+        "name": "Ethan Martinez",
+        "email": "ethan.martinez@example.com",
+        "password": "dVb212&*("
+    },
+    {
+        "name": "Ava Robinson",
+        "email": "ava.robinson@example.com",
+        "password": "fGh313!@#"
+    },
+    {
+        "name": "Alexander Clark",
+        "email": "alexander.clark@example.com",
+        "password": "gHj414$%^"
+    },
+    {
+        "name": "Harper Lewis",
+        "email": "harper.lewis@example.com",
+        "password": "hJk515&*("
+    },
+    {
+        "name": "Henry Walker",
+        "email": "henry.walker@example.com",
+        "password": "jKl616!@#"
+    },
+    {
+        "name": "Evelyn Hall",
+        "email": "evelyn.hall@example.com",
+        "password": "kLm717$%^"
+    }
+]

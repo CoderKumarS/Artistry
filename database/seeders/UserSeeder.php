@@ -22,14 +22,14 @@ class UserSeeder extends Seeder
         //     ]);
         // }
         // Create users with specific IDs
-        $json = File::get("database/json/artists.json");
-        $artists = collect(json_decode($json, true));
+        $json = File::get("database/json/users.json");
+        $users = collect(json_decode($json, true));
         // Insert users into the database
-        $artists->each(function ($artist) {
+        $users->each(function ($user) {
             User::create([
-                'name' => $artist['name'],
-                'email' => $artist['email'],
-                'password' => bcrypt($artist['password'])
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'password' => bcrypt($user['password'])
             ]);
         });
     }
