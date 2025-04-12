@@ -28,7 +28,8 @@
     @case('recent')
         <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105']) }}
             onclick="window.location.href='{{ url('/artworks/' . ($art['id'] ?? '#')) }}'">
-            <img src="{{ $art['image'] ?? 'https://placehold.co/500x400' }}" alt="Painting" class="w-full h-48 object-cover">
+            <img src="{{ $art['image'] ?? 'https://placehold.co/500x400' }}" alt="{{ $art['title'] }}"
+                class="w-full h-48 object-cover">
             <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">{{ $art['title'] ?? 'Untitled' }}</h3>
                 <a href="{{ url('/artists/' . ($art['artistId'] ?? '#')) }}">
@@ -41,7 +42,7 @@
                         <x-lucide-star class="h-4 w-4 fill-[hsl(var(--primary))] text-[hsl(var(--primary))] mr-1" />
                         <span class="text-sm">{{ $art['rating'] ?? '0' }}</span>
                     </div>
-                    <p class="font-medium">{{ $art['price'] ?? 'N/A' }}</p>
+                    <p class="font-medium">₹ {{ $art['price'] ?? 'N/A' }}</p>
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
     @case('artwork')
         <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105']) }}
             onclick="window.location.href='{{ url('/artworks/' . ($art['id'] ?? '#')) }}'">
-            <img src="{{ $art['image'] ?? '/placeholder.svg' }}" alt="{{ $art['title'] ?? 'Untitled' }}"
+            <img src="{{ $art['image'] ?? 'https://placehold.co/300x300' }}" alt="{{ $art['title'] ?? 'Untitled' }}"
                 class="w-full h-48 object-cover">
             <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">{{ $art['title'] ?? 'Untitled' }}</h3>

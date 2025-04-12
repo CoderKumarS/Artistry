@@ -1,4 +1,4 @@
-@props(['active' => false, 'type' => 'link'])
+@props(['active' => false, 'type' => null])
 @switch($type)
     @case('link')
         <a class="{{ $active ? 'relative text-black font-bold dark:text-white before:absolute before:-inset-1 before:h-1  before:bg-[#3B82F6]' : '' }} text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
@@ -20,5 +20,6 @@
     @break
 
     @default
-        <a {{ $attributes }}>{{ $slot }}</a>
+        <a
+            {{ $attributes->merge(['class' => 'text-base font-heading text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white inline-flex items-center transition-colors duration-200']) }}>{{ $slot }}</a>
 @endswitch
