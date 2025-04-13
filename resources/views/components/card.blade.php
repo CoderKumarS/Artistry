@@ -43,7 +43,7 @@
     @break
 
     @case('artwork')
-        <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105']) }}
+        <div {{ $attributes->merge(['class' => 'card bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer']) }}
             onclick="window.location.href='{{ url('/artworks/' . ($art['id'] ?? '#')) }}'">
             <img src="{{ $art['image'] ?? 'https://placehold.co/300x300' }}" alt="{{ $art['title'] ?? 'Untitled' }}"
                 class="w-full h-48 object-cover">
@@ -66,7 +66,7 @@
     @break
 
     @case('artist')
-        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
+        <div class="card bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer"
             onclick="window.location.href='{{ url('/artist/' . ($art['id'] ?? '#')) }}'">
             <img src="https://placehold.co/300x300" alt="Artist Image" class="w-full h-48 object-cover">
             <div class="p-4">

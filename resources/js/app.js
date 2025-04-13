@@ -172,11 +172,54 @@ function animateProfile() {
         "-=0.5"
     );
 }
+function animateCards(triggerId, scale) {
+    const cards = document.querySelectorAll(`${triggerId} .card`);
+    const heroTl = gsap.timeline({
+        defaults: {
+            ease: "power3.out"
+        }
+    });
+    heroTl.fromTo(
+        cards,
+        {
+            opacity: 0,
+            y: 50,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            stagger: 0.2,
+        }
+    );
+
+    // Add hover effect for scale increase
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                scale: scale || 1.05,
+                duration: 0.3,
+                ease: 'power2.inOut',
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.inOut',
+            });
+        });
+    });
+}
 animateProfile();
 // Call the function with different trigger IDs
 animateCardsOnScroll('#featured-artists', 1.1);
 animateCardsOnScroll('#recent-artwork');
 animateCardsOnScroll('#artist-artwork');
+animateCards('#art-gallery');
+animateCards('#artist-gallery');
 animateHeroSection();
 // handleScrollDirection();
 document.addEventListener('DOMContentLoaded', function () {
