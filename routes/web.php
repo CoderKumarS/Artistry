@@ -22,6 +22,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/password/email', 'sendResetLinkEmail')->name('password.email');
 });
 Route::controller(ArtistController::class)->group(function () {
+    Route::post('/submit-feedback','submit')->name('feedback.submit');
     Route::get('/dashboard', 'showDashboard')->name('dashboard');
     Route::get('/artists', 'index')->name('artists');
     Route::get('/artist/{id?}', 'profile')->name('artist.profile');

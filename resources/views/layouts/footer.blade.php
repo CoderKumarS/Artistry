@@ -9,22 +9,27 @@
                 </p>
                 <div class="flex space-x-4">
                     <x-icons type="social" ref="https://instagram.com">
-                        <x-lucide-instagram class="w-5 h-5 text-gray-600" />
+                        <x-lucide-instagram class="w-5 h-5 text-gray-600 hover:text-pink-500 hover:drop-shadow-[0_0_6px_pink] transition duration-300" />
                         @section('title', 'Instagram')
                     </x-icons>
+
                     <x-icons type="social" ref="https://twitter.com">
-                        <x-lucide-twitter class="w-5 h-5 text-gray-600" />
-                        @section('title', 'Twitter')
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 hover:text-black hover:drop-shadow-[0_0_6px_black] transition duration-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.25 2L12.9 10.75 22.92 22H16.84L10.9 15.39 4.25 22H1.75L11.42 12.67 1.58 2H7.66L13.15 8.05 19.25 2z"/>
+                        </svg>
                     </x-icons>
+
                     <x-icons type="social" ref="https://facebook.com">
-                        <x-lucide-facebook class="w-5 h-5 text-gray-600" />
+                        <x-lucide-facebook class="w-5 h-5 text-gray-600 hover:text-blue-600 hover:drop-shadow-[0_0_6px_#1877f2] transition duration-300" />
                         @section('title', 'Facebook')
                     </x-icons>
+
                     <x-icons type="social" ref="mailto:info@artistry.com">
-                        <x-lucide-mail class="w-5 h-5 text-gray-600" />
+                        <x-lucide-mail class="w-5 h-5 text-gray-600 hover:text-red-600 hover:drop-shadow-[0_0_6px_red] transition duration-300" />
                         @section('title', 'Email')
                     </x-icons>
                 </div>
+
             </div>
 
             <div class="space-y-4">
@@ -70,19 +75,44 @@
                 </ul>
             </div>
             <div class="space-y-4">
-                <h3 class="text-lg font-semibold">Newsletter</h3>
+                <h3 class="text-lg font-semibold">Feedback</h3>
                 <p class="text-sm text-[hsl(var(--muted-foreground))]">
-                    Subscribe to our newsletter for the latest art updates and exclusive offers.
+                    Please provide your feedbacks and suggestions.
                 </p>
-                <form action="#" method="POST" class="flex space-x-2">
+                <form action="{{ route('feedback.submit') }}" method="POST" id="feedback-form">
                     @csrf
-                    <input type="email" name="email" placeholder="Your email"
-                        class="flex h-9 w-full rounded-md border border-input bg-[hsl(var(--background))] px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 max-w-[220px]">
-                    <button type="submit"
-                        class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black dark:bg-blue-600 text-white dark:text-blue-100 hover:bg-[hsl(var(--primary))]/90 h-9 px-4 py-2">
-                        Subscribe
-                    </button>
+                    <input type="email" name="email" placeholder="Your email" 
+                        class="m-3 h-9 w-full max-w-[220px] rounded-md border border-input bg-[hsl(var(--background))] px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />    
+
+                    <div class="flex items-center">
+                        <textarea name="feedback" placeholder="Your feedback or suggestion" 
+                            class="m-3 h-28 w-full max-w-[220px] rounded-md border border-input bg-[hsl(var(--background))] px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 resize-none"></textarea>
+
+                        <button type="submit" 
+                            class="cursor-pointer inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow hover:bg-[hsl(var(--primary))]/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
+                            Submit
+                        </button>
+                    </div>
+
+                    @if (session('success'))
+                        <div class="text-green-600 text-center mt-2">
+                            {{ session('success') }}
+                        </div>
+                    @elseif (session('error'))
+                        <div class="text-red-600 text-center mt-2">
+                            {{ session('error') }}
+                        </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    @endif
+</form>
+
+
             </div>
         </div>
 
@@ -109,3 +139,4 @@
         </div>
     </div>
 </footer>
+

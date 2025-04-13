@@ -16,12 +16,26 @@
 
             <!-- Right: Action Icons and Login Button -->
             <div class="hidden md:flex flex-shrink-0 items-center space-x-4">
-                <button id="search-button"
-                        class="cursor-pointer text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
-                    <i data-lucide="search" id="search-icon"></i>
+                <button id="theme-toggle" class="flex items-center">
+                    <!-- Moon icon for light theme -->
+                    <x-lucide-moon id="moon-icon"
+                        class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200 h-4 w-4 cursor-pointer" />
+
+                    <!-- Sun icon for dark theme (initially hidden) -->
+                    <x-lucide-sun id="sun-icon"
+                        class="hidden text-gray-900 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition-colors duration-200 h-4 w-4 cursor-pointer" />
                 </button>
-                <button id="theme-toggle" class="cursor-pointer text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200">
-                    <span data-lucide="moon" id="theme-icon"></span>
+                <!-- Sun icon for dark theme (initially hidden) -->
+                <input type="text" id="search-input" placeholder="Search..."
+                    class="hidden bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all duration-200" />
+                <button id="search-toggle" class="flex items-center">
+                    <x-lucide-cross id="cross-icon"
+                        class="hidden text-gray-900 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition-colors duration-200 h-4 w-4 cursor-pointer" />
+                    <!-- Search icon for light theme -->
+                    <x-lucide-search id="search-icon"
+                        class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200 h-4 w-4"
+                        id="search-button" />
+
                 </button>
 
                 <a href="{{ route('login') }}"
@@ -63,13 +77,25 @@
         const sunIcon = document.getElementById('sun-icon');
         const moonIcon = document.getElementById('moon-icon');
 
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
         themeToggle.addEventListener('click', function() {
-            const isDark = document.documentElement.classList.toggle('dark');
+            // const themeIcon = localStorage.getItem('themeIcon');
+            isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            // localStorage.setItem('themeIcon', isDark ? 'sun' : 'moon');
             moonIcon.classList.toggle('hidden', isDark);
             sunIcon.classList.toggle('hidden', !isDark);
         });
     }
-
     // Search Toggle
     function initializeSearchToggle() {
         const searchToggle = document.getElementById('search-toggle');

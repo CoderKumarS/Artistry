@@ -36,5 +36,14 @@
 
     @stack('scripts')
 </body>
+<script>
+    // Apply saved theme before content loads
+    (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    })();
+</script>
 
 </html>
