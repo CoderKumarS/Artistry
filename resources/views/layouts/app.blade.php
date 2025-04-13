@@ -27,7 +27,10 @@
     <div class="relative flex min-h-screen flex-col" id="app">
         @include('layouts.navigation')
 
-        <main class="flex-1">
+        <main class="flex-1" id="main-content">
+            {{-- <div
+                class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg z-50 absolute"id="cursor">
+                A</div> --}}
             @yield('content')
         </main>
 

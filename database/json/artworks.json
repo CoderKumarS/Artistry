@@ -2,7 +2,7 @@
     {
         "title": "Sunset Horizon",
         "artistId": 1,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=1",
         "description": "A breathtaking view of the sunset over the horizon.",
         "rating": 4.8,
         "dimension": "24x36 inches",
@@ -14,7 +14,7 @@
     {
         "title": "Urban Reflections",
         "artistId": 8,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=2",
         "description": "A vibrant depiction of urban life and reflections.",
         "rating": 4.5,
         "dimension": "18x24 inches",
@@ -26,7 +26,7 @@
     {
         "title": "Garden of Dreams",
         "artistId": 2,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=3",
         "description": "An abstract representation of a dreamlike garden.",
         "rating": 4.9,
         "dimension": "30x40 inches",
@@ -38,7 +38,7 @@
     {
         "title": "Digital Cosmos",
         "artistId": 5,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=4",
         "description": "A digital artwork exploring the vastness of the cosmos.",
         "rating": 4.7,
         "dimension": "1920x1080 pixels",
@@ -50,7 +50,7 @@
     {
         "title": "Mountain Serenity",
         "artistId": 7,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=5",
         "description": "A serene view of mountains under a clear sky.",
         "rating": 4.6,
         "dimension": "20x30 inches",
@@ -62,7 +62,7 @@
     {
         "title": "Abstract Emotions",
         "artistId": 7,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=6",
         "description": "An abstract piece evoking deep emotions.",
         "rating": 4.4,
         "dimension": "16x20 inches",
@@ -74,7 +74,7 @@
     {
         "title": "Cityscape at Night",
         "artistId": 6,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=7",
         "description": "A stunning cityscape illuminated by night lights.",
         "rating": 4.8,
         "dimension": "24x36 inches",
@@ -86,7 +86,7 @@
     {
         "title": "Floral Impressions",
         "artistId": 3,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=8",
         "description": "A delicate still life of flowers in bloom.",
         "rating": 4.7,
         "dimension": "18x24 inches",
@@ -98,7 +98,7 @@
     {
         "title": "Ocean Waves",
         "artistId": 1,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=9",
         "description": "A powerful depiction of waves crashing on the shore.",
         "rating": 4.9,
         "dimension": "30x40 inches",
@@ -110,7 +110,7 @@
     {
         "title": "Techno Vibes",
         "artistId": 6,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=10",
         "description": "A digital artwork inspired by techno music.",
         "rating": 4.6,
         "dimension": "1920x1080 pixels",
@@ -122,7 +122,7 @@
     {
         "title": "Nature's Palette",
         "artistId": 3,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=11",
         "description": "A colorful representation of nature's beauty.",
         "rating": 4.5,
         "dimension": "20x30 inches",
@@ -134,7 +134,7 @@
     {
         "title": "City Lights",
         "artistId": 4,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=12",
         "description": "A vibrant city illuminated by dazzling lights.",
         "rating": 4.3,
         "dimension": "18x24 inches",
@@ -146,7 +146,7 @@
     {
         "title": "Whimsical Dreams",
         "artistId": 1,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=13",
         "description": "An abstract piece capturing whimsical dreams.",
         "rating": 4.8,
         "dimension": "30x40 inches",
@@ -158,7 +158,7 @@
     {
         "title": "Still Life with Fruits",
         "artistId": 4,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=14",
         "description": "A classic still life featuring a bowl of fruits.",
         "rating": 4.7,
         "dimension": "16x20 inches",
@@ -170,7 +170,7 @@
     {
         "title": "Abstract Waves",
         "artistId": 5,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=15",
         "description": "An abstract interpretation of ocean waves.",
         "rating": 4.6,
         "dimension": "24x36 inches",
@@ -182,7 +182,7 @@
     {
         "title": "Cosmic Journey",
         "artistId": 5,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=16",
         "description": "A surreal depiction of a journey through the cosmos.",
         "rating": 4.8,
         "dimension": "24x36 inches",
@@ -194,7 +194,7 @@
     {
         "title": "Golden Fields",
         "artistId": 6,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=17",
         "description": "A serene view of golden fields under the sun.",
         "rating": 4.6,
         "dimension": "20x30 inches",
@@ -206,7 +206,7 @@
     {
         "title": "Urban Symphony",
         "artistId": 7,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=18",
         "description": "A vibrant cityscape capturing the rhythm of urban life.",
         "rating": 4.7,
         "dimension": "18x24 inches",
@@ -218,7 +218,7 @@
     {
         "title": "Dreamy Horizons",
         "artistId": 8,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=19",
         "description": "A dreamy landscape with soft hues and distant horizons.",
         "rating": 4.9,
         "dimension": "30x40 inches",
@@ -230,7 +230,7 @@
     {
         "title": "Digital Dreams",
         "artistId": 9,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=20",
         "description": "A futuristic digital artwork exploring dreamscapes.",
         "rating": 4.5,
         "dimension": "1920x1080 pixels",
@@ -242,7 +242,7 @@
     {
         "title": "Abstract Symphony",
         "artistId": 10,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=21",
         "description": "An abstract piece inspired by musical symphonies.",
         "rating": 4.8,
         "dimension": "24x36 inches",
@@ -254,7 +254,7 @@
     {
         "title": "Ocean Serenity",
         "artistId": 11,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=22",
         "description": "A calming depiction of the ocean under a clear sky.",
         "rating": 4.7,
         "dimension": "20x30 inches",
@@ -266,7 +266,7 @@
     {
         "title": "City Reflections",
         "artistId": 12,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=23",
         "description": "A stunning cityscape reflected in water.",
         "rating": 4.6,
         "dimension": "18x24 inches",
@@ -278,7 +278,7 @@
     {
         "title": "Floral Harmony",
         "artistId": 13,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=24",
         "description": "A delicate still life of flowers in perfect harmony.",
         "rating": 4.9,
         "dimension": "16x20 inches",
@@ -290,7 +290,7 @@
     {
         "title": "Abstract Cosmos",
         "artistId": 14,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=25",
         "description": "An abstract representation of the cosmos.",
         "rating": 4.8,
         "dimension": "30x40 inches",
@@ -302,7 +302,7 @@
     {
         "title": "Mountain Bliss",
         "artistId": 15,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=26",
         "description": "A peaceful mountain scene with vibrant colors.",
         "rating": 4.7,
         "dimension": "24x36 inches",
@@ -314,7 +314,7 @@
     {
         "title": "Urban Nights",
         "artistId": 16,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=27",
         "description": "A city illuminated by the glow of night lights.",
         "rating": 4.6,
         "dimension": "18x24 inches",
@@ -326,7 +326,7 @@
     {
         "title": "Digital Symphony",
         "artistId": 17,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=28",
         "description": "A digital artwork inspired by musical compositions.",
         "rating": 4.5,
         "dimension": "1920x1080 pixels",
@@ -338,7 +338,7 @@
     {
         "title": "Abstract Whispers",
         "artistId": 18,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=29",
         "description": "An abstract piece evoking whispers of emotion.",
         "rating": 4.8,
         "dimension": "24x36 inches",
@@ -350,7 +350,7 @@
     {
         "title": "Golden Sunrise",
         "artistId": 19,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=30",
         "description": "A breathtaking view of the sunrise over golden fields.",
         "rating": 4.9,
         "dimension": "30x40 inches",
@@ -362,7 +362,7 @@
     {
         "title": "City Pulse",
         "artistId": 20,
-        "image": "https://placehold.co/500x400",
+        "image": "https://picsum.photos/500/400?random=31",
         "description": "A vibrant depiction of the pulse of city life.",
         "rating": 4.7,
         "dimension": "18x24 inches",

@@ -213,15 +213,63 @@ function animateCards(triggerId, scale) {
         });
     });
 }
+function animateContactForm() {
+    gsap.from("#contact-form", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power3.out"
+    });
+    gsap.from("#contact-form h2", {
+        duration: 0.8,
+        opacity: 0,
+        y: 30,
+        ease: "power3.out"
+    });
+    gsap.from("#contact-form label", {
+        duration: 0.8,
+        opacity: 0,
+        y: 20,
+        ease: "power3.out",
+        stagger: 0.2
+    });
+    gsap.from("#contact-form input, #contact-form textarea, #contact-form button", {
+        duration: 0.8,
+        opacity: 0,
+        y: 20,
+        ease: "power3.out",
+        stagger: 0.2
+    });
+}
+animateContactForm();
 animateProfile();
-// Call the function with different trigger IDs
 animateCardsOnScroll('#featured-artists', 1.1);
 animateCardsOnScroll('#recent-artwork');
 animateCardsOnScroll('#artist-artwork');
 animateCards('#art-gallery');
 animateCards('#artist-gallery');
 animateHeroSection();
-// handleScrollDirection();
-document.addEventListener('DOMContentLoaded', function () {
-    // Call the function
-});
+function cursorAnimation() {
+    let elem = document.querySelector("#main-content");
+    elem.addEventListener("mouseenter", function () {
+        gsap.to('#cursor', {
+            opacity: 1,
+            scale: 1
+        })
+    })
+    elem.addEventListener("mouseleave", function () {
+        gsap.to('#cursor', {
+            opacity: 0,
+            scale: 0
+        })
+    })
+    elem.addEventListener("mousemove", function (e) {
+
+        gsap.to('#cursor', {
+            x: e.x - elem.getBoundingClientRect().x,
+            y: e.y - elem.getBoundingClientRect().y,
+            duration: 0.3,
+            ease: "power3.out"
+        })
+    })
+}

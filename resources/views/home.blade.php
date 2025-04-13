@@ -35,10 +35,11 @@
                     @endforeach
                 </div>
             </div>
-            <a href="/gallery"
-                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow hover:bg-[hsl(var(--primary))]/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
-                View All Artwork
-                <x-lucide-arrow-right class="w-4 h-4 font-extrabold" />
+            <a href="/gallery">
+                <x-button type='submit'>
+                    View All Artwork
+                    <x-lucide-arrow-right class="ml-2 w-4 h-4" />
+                </x-button>
             </a>
         </div>
     </section>
