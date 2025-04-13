@@ -33,7 +33,7 @@
                         class="hidden text-gray-900 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition-colors duration-200 h-4 w-4 cursor-pointer" />
                     <!-- Search icon for light theme -->
                     <x-lucide-search id="search-icon"
-                        class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200 h-4 w-4"
+                        class="text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl transition-colors duration-200 h-4 w-4 cursor-pointer"
                         id="search-button" />
 
                 </button>

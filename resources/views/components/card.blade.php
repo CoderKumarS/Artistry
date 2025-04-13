@@ -1,8 +1,7 @@
 @props(['art' => [null], 'type' => null])
 @switch($type)
     @case('featured')
-        <div
-            {{ $attributes->merge(['class' => 'card overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105']) }}>
+        <div {{ $attributes->merge(['class' => 'card overflow-hidden rounded-lg shadow-md ']) }}>
             <img src="{{ $art['profile'] ?? 'https://placehold.co/400x400' }}" alt="{{ $art['name'] }}"
                 class="w-full h-48 object-cover">
             <div class="p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
@@ -21,7 +20,7 @@
     @break
 
     @case('recent')
-        <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105']) }}
+        <div {{ $attributes->merge(['class' => 'card bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer']) }}
             onclick="window.location.href='{{ url('/artworks/' . ($art['id'] ?? '#')) }}'">
             <img src="{{ $art['image'] ?? 'https://placehold.co/500x400' }}" alt="{{ $art['title'] }}"
                 class="w-full h-48 object-cover">

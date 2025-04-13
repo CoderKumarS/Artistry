@@ -1,6 +1,6 @@
 <div class="flex min-h-screen flex-col">
     <div
-        class="bg-gray-200 dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-white flex p-6 lg:p-8 items-center justify-center min-h-screen flex-col">
+        class="bg-gray-200 dark:bg-gray-900 text-[#1b1b18] dark:text-white flex p-6 lg:p-8 items-center justify-center min-h-screen flex-col">
         <div class="text-center max-w-lg">
             <h1 class="text-4xl font-extrabold mb-6 leading-tight sm:text-5xl lg:text-6xl">
                 Welcome to <span class="text-blue-500 dark:text-blue-400">Artistry</span>
@@ -23,7 +23,7 @@
     <div
         class="relative overflow-hidden bg-gradient-to-b from-[hsl(var(--background))] to-[hsl(var(--muted))]/30 pt-16 md:pt-24
         id="hero-section">
-        <div class="container-full px-16 md:px-16">
+        <div class="container-full px-16 md:px-16" id="hero-content">
             <div class="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
                 <div id="hero-text" class="flex flex-col justify-center space-y-4">
                     <div class="space-y-2">
