@@ -1,0 +1,202 @@
+[
+    {
+        "userId": 1,
+        "description": "Passionate artist specializing in abstract painting.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "New York, USA",
+        "specialty": "Abstract Art",
+        "education": "Fine Arts, NYU",
+        "experience": 2015
+    },
+    {
+        "userId": 2,
+        "description": "Digital illustrator with a love for fantasy themes.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Los Angeles, USA",
+        "specialty": "Digital Illustration",
+        "education": "Art Center College of Design",
+        "experience": 2018
+    },
+    {
+        "userId": 3,
+        "description": "Sculptor creating modern and minimalist designs.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Chicago, USA",
+        "specialty": "Sculpture",
+        "education": "School of the Art Institute of Chicago",
+        "experience": 2012
+    },
+    {
+        "userId": 4,
+        "description": "Photographer capturing the beauty of nature.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Seattle, USA",
+        "specialty": "Nature Photography",
+        "education": "Photography, UCLA",
+        "experience": 2016
+    },
+    {
+        "userId": 5,
+        "description": "Street artist with a focus on urban culture.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "San Francisco, USA",
+        "specialty": "Street Art",
+        "education": "Self-taught",
+        "experience": 2010
+    },
+    {
+        "userId": 6,
+        "description": "Painter inspired by impressionist masters.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Paris, France",
+        "specialty": "Impressionism",
+        "education": "École des Beaux-Arts",
+        "experience": 2008
+    },
+    {
+        "userId": 7,
+        "description": "Ceramic artist creating functional and decorative pieces.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Tokyo, Japan",
+        "specialty": "Ceramics",
+        "education": "Tokyo University of the Arts",
+        "experience": 2014
+    },
+    {
+        "userId": 8,
+        "description": "Graphic designer with a passion for typography.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Berlin, Germany",
+        "specialty": "Graphic Design",
+        "education": "Bauhaus University",
+        "experience": 2017
+    },
+    {
+        "userId": 9,
+        "description": "Animator bringing characters to life.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Toronto, Canada",
+        "specialty": "Animation",
+        "education": "Sheridan College",
+        "experience": 2013
+    },
+    {
+        "userId": 10,
+        "description": "Calligrapher with a modern twist.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Istanbul, Turkey",
+        "specialty": "Calligraphy",
+        "education": "Mimar Sinan Fine Arts University",
+        "experience": 2011
+    },
+    {
+        "userId": 11,
+        "description": "Fashion designer creating sustainable clothing.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Milan, Italy",
+        "specialty": "Fashion Design",
+        "education": "Politecnico di Milano",
+        "experience": 2019
+    },
+    {
+        "userId": 12,
+        "description": "Jewelry designer crafting unique handmade pieces.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Mumbai, India",
+        "specialty": "Jewelry Design",
+        "education": "National Institute of Design",
+        "experience": 2010
+    },
+    {
+        "userId": 13,
+        "description": "Tattoo artist specializing in black and gray realism.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "London, UK",
+        "specialty": "Tattoo Art",
+        "education": "Self-taught",
+        "experience": 2015
+    },
+    {
+        "userId": 14,
+        "description": "Architectural illustrator with a focus on 3D renderings.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Dubai, UAE",
+        "specialty": "Architectural Illustration",
+        "education": "American University of Sharjah",
+        "experience": 2012
+    },
+    {
+        "userId": 15,
+        "description": "Muralist creating large-scale public art.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Mexico City, Mexico",
+        "specialty": "Murals",
+        "education": "Academy of San Carlos",
+        "experience": 2009
+    },
+    {
+        "userId": 16,
+        "description": "Illustrator focusing on children's books.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Sydney, Australia",
+        "specialty": "Children's Illustration",
+        "education": "University of Sydney",
+        "experience": 2018
+    },
+    {
+        "userId": 17,
+        "description": "Painter exploring surrealism and dreamscapes.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Barcelona, Spain",
+        "specialty": "Surrealism",
+        "education": "University of Barcelona",
+        "experience": 2011
+    },
+    {
+        "userId": 18,
+        "description": "Printmaker creating limited edition art prints.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Amsterdam, Netherlands",
+        "specialty": "Printmaking",
+        "education": "Gerrit Rietveld Academie",
+        "experience": 2013
+    },
+    {
+        "userId": 19,
+        "description": "Concept artist for video games and movies.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Seoul, South Korea",
+        "specialty": "Concept Art",
+        "education": "Korea National University of Arts",
+        "experience": 2016
+    },
+    {
+        "userId": 20,
+        "description": "Painter inspired by traditional Chinese landscapes.",
+        "profile": "https://placehold.co/100x100",
+        "background": "https://placehold.co/800x300",
+        "location": "Beijing, China",
+        "specialty": "Chinese Landscape Painting",
+        "education": "Central Academy of Fine Arts",
+        "experience": 2007
+    }
+]

@@ -10,16 +10,9 @@
 
             <!-- Artist Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Example Artist Card -->
-                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
-                    <img src="https://via.placeholder.com/300" alt="Artist Image" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h2 class="text-xl font-semibold mb-2">Artist Name</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Short description about the artist. This is a
-                            placeholder text.</p>
-                    </div>
-                </div>
-                <!-- Repeat similar cards for other artists -->
+                @foreach ($artists as $artist)
+                    <x-card :art="$artist" type="artist" />
+                @endforeach
             </div>
         </div>
     </div>

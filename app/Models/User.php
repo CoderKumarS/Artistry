@@ -45,16 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function findUserById($id): array
+
+    public function artworks()
     {
-        // Logic to find a user by ID
-        $user = User::find($id);
-        if (!$user) {
-            return [];
-        }
-        return [
-            'name' => $user->name,
-            'email' => $user->email
-        ];
+        return $this->hasMany(Artist::class, 'userId');
     }
+
 }

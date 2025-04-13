@@ -37,13 +37,11 @@
                         </p>
                     </div>
                     <div class="flex flex-col gap-2 min-[400px]:flex-row">
-                        <a href="#"
-                            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black text-white shadow hover:bg-black/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
-                            Explore Gallery
+                        <a href="{{ url('/gallery/') }}">
+                            <x-button type='submit'>Explore Gallery</x-button>
                         </a>
-                        <a href="{{ route('login') }}"
-                            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-[hsl(var(--background))] shadow-sm hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] h-10 px-4 py-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
-                            Artist Login
+                        <a href="{{ url('/login/') }}">
+                            <x-button type='secondary'>Artist Login</x-button>
                         </a>
                     </div>
                 </div>
@@ -70,19 +68,13 @@
                 Connect with creators, share your thoughts, and find your next masterpiece.
             </p>
             <div class="flex flex-col gap-2 min-[400px]:flex-row">
-                <a href="#"
-                    class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow hover:bg-[hsl(var(--primary))]/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
-                    Browse Gallery
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-arrow-right ml-2">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                    </svg>
+                <a href="{{ url('/gallery/') }}">
+                    <x-button type='submit'>Browse Gallery
+                        <x-lucide-arrow-right class="ml-2 w-4 h-4" />
+                    </x-button>
                 </a>
-                <a href="#"
-                    class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-[hsl(var(--background))] shadow-sm hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] h-10 px-4 py-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
-                    Meet Our Artists
+                <a href="{{ url('/artists/') }}">
+                    <x-button type='secondary'>Meet Our Artists</x-button>
                 </a>
             </div>
         </div>
