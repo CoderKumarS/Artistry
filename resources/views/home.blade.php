@@ -13,7 +13,13 @@
             <p class="max-w-[85%] leading-normal text-[hsl(var(--muted-foreground))] sm:text-lg sm:leading-7 mb-8">
                 Meet the talented creators behind our most popular works
             </p>
-            @include('landing.featured')
+            <div class="w-full">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    @foreach ($featured as $artist)
+                        <x-card :art="$artist" type='featured' />
+                    @endforeach
+                </div>
+            </div>
         </div>
     </section>
     <section class="container-full px-4 py-12 md:py-24">
@@ -113,5 +119,33 @@
                     }
                 }
             );
+
         });
     </script>
+
+    {{-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const artistsRef = document.getElementById('artistsRef');
+        if (artistsRef) {
+            gsap.fromTo(
+                artistsRef.querySelectorAll('.artist-card'), {
+                    y: 50,
+                    opacity: 0
+                }, {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: artistsRef,
+                        start: 'top 80%',
+                    },
+                }
+            );
+        }
+    });
+</script> --}}
+@endpush

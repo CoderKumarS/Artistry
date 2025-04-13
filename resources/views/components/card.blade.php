@@ -4,7 +4,7 @@
         <div {{ $attributes->merge(['class' => 'card overflow-hidden']) }}>
             <div class="p-0  border-2  rounded-md border-gray-300 dark:border-gray-600 max-w-sm ">
                 <div class="relative aspect-square overflow-hidden">
-                    <img src="{{ $art['image'] ?? 'https://placehold.co/400x400' }}" alt="Artist Image"
+                    <img src="{{ $art['profile'] ?? 'https://placehold.co/400x400' }}" alt="{{ $art['name'] }}"
                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                 </div>
                 <div
@@ -13,7 +13,7 @@
                     <h3 class="text-xl font-semibold">{{ trim($art['name'] ?? 'Unknown Artist') }}</h3>
                     <p class="text-sm text-[hsl(var(--muted-foreground))]">
                         {{ trim($art['specialty'] ?? 'Unknown Specialty') }}</p>
-                    <p class="text-sm mt-1">{{ $art['artworks'] ?? 0 }} Artworks</p>
+                    <p class="text-sm mt-1">{{ $art['artwork_count'] ?? 0 }} Artworks</p>
                     <a href="{{ url('/artist/' . ($art['id'] ?? '#')) }}" class="mt-3 inline-block">
                         <button
                             class="border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-4 py-2 text-sm font-medium cursor-pointer dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700"">
@@ -32,9 +32,9 @@
                 class="w-full h-48 object-cover">
             <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">{{ $art['title'] ?? 'Untitled' }}</h3>
-                <a href="{{ url('/artist/' . ($art['artistId'] ?? '#')) }}">
+                <a href="{{ url('/artist/' . ($art['artist_id'] ?? '#')) }}">
                     <p class="text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))]">
-                        by {{ $art['artist']['user']['name'] ?? 'Unknown Artist' }}
+                        by {{ $art['artist_name'] ?? 'Unknown Artist' }}
                     </p>
                 </a>
                 <div class="flex items-center justify-between mt-2">
