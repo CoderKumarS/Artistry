@@ -26,7 +26,17 @@ class ArtistController extends Controller
     public function profile($id)
     {
         $artist = Artist::with('user')->find($id);
-        $artwork = Artwork::where('artistId', $id)->get();
+        $artwork = Artwork::where('artistId', $id)->get(['id', 'image', 'title', 'rating', 'price', 'artistId'])->map(function ($artwork) {
+            return [
+                'id' => $artwork->id,
+                'image' => $artwork->image,
+                'title' => $artwork->title,
+                'rating' => $artwork->rating,
+                'price' => $artwork->price,
+                'artist_id' => $artwork->artistId,
+                'artist_name' => $artwork->artist->user->name,
+            ];
+        });
         if (!$artist || !$artwork) {
             return response()->json(['message' => 'Artwork not found'], 404);
         }
@@ -53,11 +63,11 @@ class ArtistController extends Controller
             'feedback' => $request->feedback,
         ];
 
-        Mail::send('emails.feedback', $data, function($message) use ($data) {
+        Mail::send('emails.feedback', $data, function ($message) use ($data) {
             $message->to('varshpush@gmail.com')
-                    ->subject('New Feedback from Website');
+                ->subject('New Feedback from Website');
         });
 
-        
+
     }
 }

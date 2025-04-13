@@ -1,26 +1,21 @@
 @props(['art' => [null], 'type' => null])
 @switch($type)
     @case('featured')
-        <div {{ $attributes->merge(['class' => 'card overflow-hidden']) }}>
-            <div class="p-0  border-2  rounded-md border-gray-300 dark:border-gray-600 max-w-sm ">
-                <div class="relative aspect-square overflow-hidden">
-                    <img src="{{ $art['profile'] ?? 'https://placehold.co/400x400' }}" alt="{{ $art['name'] }}"
-                        class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div
-                    class="p-4 bg-white text-gray-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-300 mx-auto rounded-b-md">
-
-                    <h3 class="text-xl font-semibold">{{ trim($art['name'] ?? 'Unknown Artist') }}</h3>
-                    <p class="text-sm text-[hsl(var(--muted-foreground))]">
-                        {{ trim($art['specialty'] ?? 'Unknown Specialty') }}</p>
-                    <p class="text-sm mt-1">{{ $art['artwork_count'] ?? 0 }} Artworks</p>
-                    <a href="{{ url('/artist/' . ($art['id'] ?? '#')) }}" class="mt-3 inline-block">
-                        <button
-                            class="border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-4 py-2 text-sm font-medium cursor-pointer dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700"">
-                            View Profile
-                        </button>
-                    </a>
-                </div>
+        <div
+            {{ $attributes->merge(['class' => 'card overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105']) }}>
+            <img src="{{ $art['profile'] ?? 'https://placehold.co/400x400' }}" alt="{{ $art['name'] }}"
+                class="w-full h-48 object-cover">
+            <div class="p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                <h3 class="text-lg font-semibold mb-1">{{ trim($art['name'] ?? 'Unknown Artist') }}</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    {{ trim($art['speciality'] ?? 'Unknown Specialty') }}</p>
+                <p class="text-sm mt-2">{{ $art['artwork_count'] ?? 0 }} Artworks</p>
+                <a href="{{ url('/artist/' . ($art['id'] ?? '#')) }}" class="mt-3 inline-block">
+                    <button
+                        class="border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-4 py-2 text-sm font-medium cursor-pointer dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
+                        View Profile
+                    </button>
+                </a>
             </div>
         </div>
     @break

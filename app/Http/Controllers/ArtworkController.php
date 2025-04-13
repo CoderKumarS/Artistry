@@ -49,7 +49,18 @@ class ArtworkController extends Controller
             })
             ->orderByDesc('rating') // Assuming 'rating' is a column in your database
             ->take(3)
-            ->get();
+            ->get()
+            ->map(function ($artwork) {
+                return [
+                    'id' => $artwork->id,
+                    'image' => $artwork->image,
+                    'title' => $artwork->title,
+                    'rating' => $artwork->rating,
+                    'price' => $artwork->price,
+                    'artist_id' => $artwork->artist->id,
+                    'artist_name' => $artwork->artist->user->name,
+                ];
+            });
         if (!$artwork || !$artwork->artist) {
             // Handle the case where the artwork or artist is not found
             return response()->json(['message' => 'Artwork not found'], 404);

@@ -28,7 +28,13 @@
             <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 mb-8">
                 Explore our latest masterpieces added to the collection
             </p>
-            @include('landing.recent', ['recent' => $recent])
+            <div class="w-full">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($recent as $painting)
+                        <x-card :art="$painting" type='recent' />
+                    @endforeach
+                </div>
+            </div>
             <a href="/gallery"
                 class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow hover:bg-[hsl(var(--primary))]/90 h-10 px-4 py-2 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700">
                 View All Artwork
@@ -121,12 +127,9 @@
             );
 
         });
-    </script>
 
-    {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        gsap.registerPlugin(ScrollTrigger);
 
+        {{--
         const artistsRef = document.getElementById('artistsRef');
         if (artistsRef) {
             gsap.fromTo(
@@ -146,6 +149,25 @@
                 }
             );
         }
-    });
-</script> --}}
+        const artistsRef = document.getElementById('artistsRef');
+        if (artistsRef) {
+            gsap.fromTo(
+                artistsRef.querySelectorAll('.artist-card'), {
+                    y: 50,
+                    opacity: 0
+                }, {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: artistsRef,
+                        start: 'top 80%',
+                    },
+                }
+            );
+        }
+ --}}
+    </script>
 @endpush
