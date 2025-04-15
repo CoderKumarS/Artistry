@@ -11,15 +11,15 @@
 @section('content')
     <div class="container-full items-center justify-center w-full">
         <div class="relative h-[300px] md:h-[400px] overflow-hidden" id="artist-profile-cover">
-            <img src="{{ $artist['background'] ?? '/placeholder.svg' }}" alt="{{ $artist['user']['name'] }} cover"
+            <img src="{{ $artist['background'] ?? 'https://placehold.co/800x200' }}" alt="{{ $artist['user']['name'] }} cover"
                 class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute bottom-0 left-0 right-0 py-6 px-10 text-white">
                 <div class="container flex items-end gap-6">
                     <div
                         class="relative h-24 w-24 md:h-32 md:w-32 overflow-hidden rounded-full border-4 border-white dark:border-gray-900">
-                        <img src="{{ $artist['profile'] ?? '/placeholder.svg' }}" alt="{{ $artist['user']['name'] }}"
-                            class="absolute inset-0 w-full h-full object-cover" />
+                        <img src="{{ $artist['profile'] ?? 'https://placehold.co/100x100' }}"
+                            alt="{{ $artist['user']['name'] }}" class="absolute inset-0 w-full h-full object-cover" />
                     </div>
                     <div>
                         <h1 class="text-2xl md:text-4xl font-bold">{{ $artist['user']['name'] }}</h1>

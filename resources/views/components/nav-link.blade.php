@@ -19,6 +19,13 @@
             {{ $attributes->merge(['aria-current' => $active ? 'page' : 'false']) }}>{{ $slot }}</a>
     @break
 
+    @case('dashLink')
+        <a
+            class="{{ $active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : '' }} flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white dark:text-gray-300 {{ $attributes->merge(['aria-current' => $active ? 'page' : 'false']) }}">
+            {{ $slot }}
+        </a>
+    @break
+
     @default
         <a
             {{ $attributes->merge(['class' => 'text-base font-heading text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white inline-flex items-center transition-colors duration-200']) }}>{{ $slot }}</a>

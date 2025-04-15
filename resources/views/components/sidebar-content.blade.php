@@ -5,26 +5,31 @@
             'title' => 'Dashboard',
             'href' => '/dashboard',
             'icon' => 'layout-dashboard',
+            'pattern' => 'dashboard',
         ],
         [
             'title' => 'My Paintings',
             'href' => '/dashboard/paintings',
             'icon' => 'image',
+            'pattern' => 'dashboard/paintings',
         ],
         [
             'title' => 'Comments',
             'href' => '/dashboard/comments',
             'icon' => 'message-square',
+            'pattern' => 'dashboard/comments',
         ],
         [
             'title' => 'Analytics',
             'href' => '/dashboard/analytics',
             'icon' => 'bar-chart-3',
+            'pattern' => 'dashboard/analytics',
         ],
         [
             'title' => 'Settings',
             'href' => '/dashboard/settings',
             'icon' => 'settings',
+            'pattern' => 'dashboard/settings',
         ],
     ];
 @endphp
@@ -43,13 +48,10 @@
 
 <nav class="flex-1 overflow-auto py-4">
     <ul class="grid gap-1 px-2">
-        @foreach ($navItems as $index => $item)
+        @foreach ($navItems as $item)
             <li>
-                <a href="{{ $item['href'] }}"
-                    class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white dark:text-gray-300 {{ $index === 0 ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : '' }}">
-                    {{-- @include('components.icons.' . $item['icon'], ['class' => 'h-4 w-4']) --}}
-                    {{ $item['title'] }}
-                </a>
+                <x-nav-link href="{{ $item['href'] }}" :active="request()->is($item['pattern'])"
+                    type="dashLink">{{ $item['title'] }}</x-nav-link>
             </li>
         @endforeach
     </ul>
@@ -60,12 +62,6 @@
         <x-button type='secondary' class="w-full">
             <x-lucide-log-out class="h-4 w-4" />
             <span>Back to Gallery</span>
-        </x-button>
-    </a>
-    <a href="{{ route('logout') }}">
-        <x-button type='secondary' class="w-full">
-            <x-lucide-log-out class="h-4 w-4" />
-            <span>Logout</span>
         </x-button>
     </a>
 </div>
