@@ -17,6 +17,12 @@
         </button>
     @break
 
+    @case('icon')
+        <div {{ $attributes->merge(['class' => 'rounded-full bg-gray-100 dark:bg-gray-700 p-3 text-black dark:text-white']) }}>
+            {{ $slot }}
+        </div>
+    @break
+
     @default
         <button {{ $attributes }}>{{ $slot }}</button>
 @endswitch

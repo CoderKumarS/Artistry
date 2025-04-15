@@ -13,7 +13,34 @@ class ArtistController extends Controller
     {
         // Logic to show the dashboard
         if (Auth::check()) {
-            return view('layouts.dashboard');
+            $user = Auth::user();
+            $artist = Artist::where('userId', $user->id)->first();
+            if ($artist) {
+                $paintingCount = Artwork::where('artistId', $artist->id)->count();
+                $latestPaintings = Artwork::where('artistId', $artist->id)
+                    ->orderBy('created_at', 'desc')
+                    ->take(5)
+                    ->get(['id', 'title', 'image', 'created_at', 'rating']);
+                $allPaintings = Artwork::where('artistId', $artist->id)->get(['id', 'title', 'image']);
+                $averageRating = Artwork::where('artistId', $artist->id)->avg('rating');
+
+                // return response()->json([
+                //     'artist' => $artist,
+                //     'painting_count' => $paintingCount,
+                //     'latest_paintings' => $latestPaintings,
+                //     'all_paintings' => $allPaintings,
+                //     'average_rating' => $averageRating
+                // ]);
+                return view('layouts.dashboard')->with([
+                    'artist' => $artist,
+                    'painting_count' => $paintingCount,
+                    'latest_paintings' => $latestPaintings,
+                    'all_paintings' => $allPaintings,
+                    'average_rating' => $averageRating
+                ]);
+            } else {
+                return response()->json(['message' => 'Artist not found'], 404);
+            }
         } else {
             return redirect()->route('login')->with('error', 'Please login to access the dashboard.');
         }
