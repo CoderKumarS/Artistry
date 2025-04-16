@@ -102,6 +102,7 @@
         if (tabs.length > 0) {
             tabs[0].click();
         }
+        
         const successAlert = document.getElementById('success-alert');
         const errorAlert = document.getElementById('error-alert');
 

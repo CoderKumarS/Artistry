@@ -12,13 +12,13 @@
                     <p class="text-sm text-gray-600 dark:text-gray-400">Enter your credentials to access your dashboard</p>
                 </div>
                 <div class="p-6 pt-0">
-                    @if ($errors->any())
-                        <div class="mb-4 p-4 rounded-lg bg-red-100 text-red-700">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                    @if (session('error'))
+                        <div id="error-alert"
+                            class="alert alert-error bg-red-100 text-red-800 p-4 rounded fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between w-96 shadow-lg">
+                            <span>{{ session('error') }}</span>
+                            <button onclick="document.getElementById('error-alert').remove()" class="ml-4 text-red-800">
+                                &times;
+                            </button>
                         </div>
                     @endif
 
@@ -113,6 +113,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // GSAP animation
+            const errorAlert = document.getElementById('error-alert');
+
+            if (errorAlert) {
+                setTimeout(() => {
+                    gsap.to(errorAlert, {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.5,
+                        onComplete: () => errorAlert.remove()
+                    });
+                }, 5000);
+            }
             gsap.fromTo(
                 "#login-form", {
                     y: 20,
