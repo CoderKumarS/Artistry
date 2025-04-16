@@ -24,11 +24,16 @@ Route::controller(AuthController::class)->group(function () {
 });
 Route::controller(ArtistController::class)->group(function () {
     Route::post('/submit-feedback', 'submit')->name('feedback.submit');
-    Route::get('/dashboard', 'showDashboard')->name('dashboard');
-    Route::get('/dashboard/create', 'showDashboard')->name('dashboard.create');
-    Route::get('/dashboard/paintings', 'showDashboard')->name('dashboard.paintings');
     Route::get('/artists', 'index')->name('artists');
     Route::get('/artist/{id?}', 'profile')->name('artist.profile');
 });
 
 Route::resource('/artworks', ArtworkController::class);
+
+Route::prefix('dashboard')->controller(ArtistController::class)->group(function () {
+    Route::get('/', 'showDashboard')->name('dashboard');
+    Route::get('/paintings', 'showDashboard')->name('dashboard.paintings');
+    Route::get('/comments', 'showDashboard')->name('dashboard.comments');
+    Route::get('/analytics', 'showDashboard')->name('dashboard.analytics');
+    Route::get('/settings', 'showDashboard')->name('dashboard.settings');
+});

@@ -95,7 +95,7 @@
                 </div>
                 <div class="space-y-4">
                     <div id="imagePreview"
-                        class="relative aspect-[3/4] overflow-hidden rounded-md border-2 border-dashed border-gray-300 hidden">
+                        class="relative aspect-[3/2] overflow-hidden rounded-md border-2 border-dashed border-gray-300 hidden">
                         <img id="previewImage" src="" alt="Painting preview" class="h-full w-full object-cover">
                         <button id="removeImage"
                             class="absolute right-2 top-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600">
@@ -103,7 +103,7 @@
                         </button>
                     </div>
                     <label for="image-upload"
-                        class="flex aspect-[3/4] cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 p-6 text-center hover:bg-gray-50 dark:hover:bg-gray-700">
+                        class="flex aspect-[3/2] cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 p-6 text-center hover:bg-gray-50 dark:hover:bg-gray-700">
                         <x-lucide-upload class="h-6 w-6 text-gray-400" />
                         <p class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-200">Drag and drop your image
                             here or click to

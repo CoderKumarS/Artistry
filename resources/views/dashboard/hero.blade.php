@@ -113,54 +113,60 @@
                         </div>
                         <div class="px-6 py-5">
                             <div class="space-y-4">
-                                @foreach ($latest_paintings as $painting)
-                                    <div class="flex items-center gap-4">
-                                        <div class="relative h-16 w-16 overflow-hidden rounded-md">
-                                            <img src="{{ $painting->image }}" alt="{{ $painting->title }}"
-                                                class="object-cover absolute inset-0 w-full h-full">
-                                        </div>
-                                        <div class="flex-1 min-w-0">
-                                            <a href="{{ url('/artworks/' . ($painting->id ?? '#')) }}">
-                                                <h4 class="font-medium hover:text-blue-600 dark:text-white">
-                                                    {{ $painting->title }}
-                                                </h4>
-                                            </a>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400">Added
-                                                {{ $painting->created_at->diffForHumans() }}</p>
-                                        </div>
-                                        @php
-                                            $tabStats = [
-                                                [
-                                                    'icon' => 'lucide-eye',
-                                                    'value' => $painting->views_count ?? 0,
-                                                    'is_star' => false,
-                                                ],
-                                                [
-                                                    'icon' => 'lucide-message-square',
-                                                    'value' => $painting->comments_count ?? 0,
-                                                    'is_star' => false,
-                                                ],
-                                                [
-                                                    'icon' => 'lucide-star',
-                                                    'value' => number_format($painting->rating, 1),
-                                                    'is_star' => true,
-                                                ],
-                                            ];
-                                        @endphp
-                                        <div class="flex items-center gap-4 text-sm">
-                                            @foreach ($tabStats as $stat)
-                                                <div class="flex items-center">
-                                                    <x-dynamic-component :component="$stat['icon']"
-                                                        class="mr-1 h-4 w-4 {{ $stat['is_star'] ? 'fill-black text-black dark:fill-blue-500 dark:text-blue-500' : 'text-gray-500 dark:text-blue-500' }}" />
-                                                    <span class="dark:text-gray-300">{{ $stat['value'] }}</span>
-                                                </div>
-                                            @endforeach
-                                        </div>
+                                @if ($all_paintings->isEmpty())
+                                    <div class="text-center text-gray-500">
+                                        <p>No paintings available.</p>
                                     </div>
-                                @endforeach
+                                @else
+                                    @foreach ($latest_paintings as $painting)
+                                        <div class="flex items-center gap-4">
+                                            <div class="relative h-16 w-16 overflow-hidden rounded-md">
+                                                <img src="{{ $painting->image }}" alt="{{ $painting->title }}"
+                                                    class="object-cover absolute inset-0 w-full h-full">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <a href="{{ url('/artworks/' . ($painting->id ?? '#')) }}">
+                                                    <h4 class="font-medium hover:text-blue-600 dark:text-white">
+                                                        {{ $painting->title }}
+                                                    </h4>
+                                                </a>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">Added
+                                                    {{ $painting->created_at->diffForHumans() }}</p>
+                                            </div>
+                                            @php
+                                                $tabStats = [
+                                                    [
+                                                        'icon' => 'lucide-eye',
+                                                        'value' => $painting->views_count ?? 0,
+                                                        'is_star' => false,
+                                                    ],
+                                                    [
+                                                        'icon' => 'lucide-message-square',
+                                                        'value' => $painting->comments_count ?? 0,
+                                                        'is_star' => false,
+                                                    ],
+                                                    [
+                                                        'icon' => 'lucide-star',
+                                                        'value' => number_format($painting->rating, 1),
+                                                        'is_star' => true,
+                                                    ],
+                                                ];
+                                            @endphp
+                                            <div class="flex items-center gap-4 text-sm">
+                                                @foreach ($tabStats as $stat)
+                                                    <div class="flex items-center">
+                                                        <x-dynamic-component :component="$stat['icon']"
+                                                            class="mr-1 h-4 w-4 {{ $stat['is_star'] ? 'fill-black text-black dark:fill-blue-500 dark:text-blue-500' : 'text-gray-500 dark:text-blue-500' }}" />
+                                                        <span class="dark:text-gray-300">{{ $stat['value'] }}</span>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="mt-6 text-center">
-                                <a href="{{ route('gallery') }}">
+                                <a href="{{ route('dashboard.paintings') }}">
                                     <x-button type="secondary">
                                         View All Paintings
                                     </x-button>
@@ -245,7 +251,7 @@
                                 @endforeach
                             </div>
                             <div class="mt-6 text-center">
-                                <a href="#">
+                                <a href="{{ route('dashboard.comments') }}">
                                     <x-button type="secondary">
                                         View All Comments
                                     </x-button>
@@ -265,7 +271,7 @@
                                 <p class="text-sm text-gray-600 dark:text-gray-400">Manage your artwork collection
                                 </p>
                             </div>
-                            <a href="{{ route('dashboard.create') }}">
+                            <a href="{{ route('artworks.create') }}">
                                 <x-button type="submit">
                                     <x-lucide-plus class="h-4 w-4 mr-2" />
                                     Add New
@@ -276,6 +282,13 @@
                             @foreach ($all_paintings as $painting)
                                 <x-card :art="$painting" type='painting' />
                             @endforeach
+                            <div class="mt-6 text-center">
+                                <a href="{{ route('dashboard.paintings') }}">
+                                    <x-button type="secondary">
+                                        View All Paintings
+                                    </x-button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,7 +315,8 @@
                                             <div>
                                                 <p class="text-sm font-medium dark:text-white">
                                                     {{ $comment->user->name }}</p>
-                                                <div class="flex items-center text-xs text-gray-600 dark:text-gray-400">
+                                                <div
+                                                    class="flex items-center text-xs text-gray-600 dark:text-gray-400">
                                                     <a href="{{ route('artworks.show', $comment->artwork_id) }}"
                                                         class="hover:text-blue-600 dark:hover:text-blue-400">
                                                         {{ $comment->artwork->title }}
@@ -330,6 +344,13 @@
                                     <hr class="my-2 dark:border-gray-700">
                                 </div>
                             @endforeach
+                            <div class="mt-6 text-center">
+                                <a href="{{ route('dashboard.comments') }}">
+                                    <x-button type="secondary">
+                                        View All Comments
+                                    </x-button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -352,6 +373,13 @@
                                         Detailed analytics about your artwork performance will appear here.
                                     </p>
                                 </div>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <a href="{{ route('dashboard.analytics') }}">
+                                    <x-button type="secondary">
+                                        View All Analytics
+                                    </x-button>
+                                </a>
                             </div>
                         </div>
                     </div>

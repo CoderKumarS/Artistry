@@ -3,6 +3,25 @@
 @section('description', 'Artist Dashboard - Manage your profile and artworks')
 @section('content')
     <div class="flex min-h-screen">
+        @if (session('success'))
+            <div id="success-alert"
+                class="alert alert-success bg-green-100 text-green-800 p-4 rounded fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between w-96 shadow-lg">
+                <span>{{ session('success') }}</span>
+                <button onclick="document.getElementById('success-alert').remove()" class="ml-4 text-green-800">
+                    &times;
+                </button>
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div id="error-alert"
+                class="alert alert-error bg-red-100 text-red-800 p-4 rounded fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between w-96 shadow-lg">
+                <span>{{ session('error') }}</span>
+                <button onclick="document.getElementById('error-alert').remove()" class="ml-4 text-red-800">
+                    &times;
+                </button>
+            </div>
+        @endif
         <div class="sidebar-wrapper">
             {{-- Mobile sidebar --}}
             <div class="flex items-center lg:hidden p-4">
@@ -31,8 +50,14 @@
         </div>
         @if (request()->is('dashboard'))
             @include('dashboard.hero', ['artist' => $artist])
-        @elseif (request()->is('dashboard/create'))
-            @include('dashboard.create', ['artist' => $artist])
+        @elseif (request()->is('dashboard/paintings'))
+            @include('dashboard.paintings', ['artist' => $artist])
+        @elseif (request()->is('dashboard/comments'))
+            @include('dashboard.comments', ['artist' => $artist])
+        @elseif (request()->is('dashboard/analytics'))
+            @include('dashboard.analytics', ['artist' => $artist])
+        @elseif (request()->is('dashboard/settings'))
+            @include('dashboard.setting', ['artist' => $artist])
         @endif
     </div>
 
@@ -76,6 +101,30 @@
         // Activate the first tab by default
         if (tabs.length > 0) {
             tabs[0].click();
+        }
+        const successAlert = document.getElementById('success-alert');
+        const errorAlert = document.getElementById('error-alert');
+
+        if (successAlert) {
+            setTimeout(() => {
+                gsap.to(successAlert, {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.5,
+                    onComplete: () => successAlert.remove()
+                });
+            }, 5000);
+        }
+
+        if (errorAlert) {
+            setTimeout(() => {
+                gsap.to(errorAlert, {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.5,
+                    onComplete: () => errorAlert.remove()
+                });
+            }, 5000);
         }
     });
 </script>

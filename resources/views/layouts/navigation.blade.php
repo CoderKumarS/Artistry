@@ -1,4 +1,4 @@
-<nav class="bg-white dark:bg-gray-800 shadow px-16 md:px-16">
+<nav class="bg-white dark:bg-gray-800 shadow px-16 md:px-16 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto ">
         <div class="flex justify-between h-16">
             <!-- Brand Logo -->
@@ -38,11 +38,19 @@
 
                 </button>
 
-                <a href="{{ route('login') }}"
-                    class="flex items-center gap-2 text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                    <span>Login</span>
-                    <i data-lucide="log-in" id="login-icon"></i>
-                </a>
+                @auth
+                    <a href="{{ route('dashboard') }}"
+                        class="flex items-center gap-2 text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        <x-lucide-user class="h-4 w-4" />
+                        <span>{{ Auth::user()->name }}</span>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}"
+                        class="flex items-center gap-2 text-gray-900 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                        <span>Login</span>
+                        <i data-lucide="log-in" id="login-icon"></i>
+                    </a>
+                @endauth
             </div>
 
             <!-- Mobile Menu Button -->
