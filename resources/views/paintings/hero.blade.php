@@ -2,7 +2,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-4">
     <div class="relative overflow-hidden rounded-lg">
         <img src="{{ $artwork['image'] ?? 'https://placehold.co/300x300' }}" alt="{{ $artwork['title'] ?? 'Untitled' }}"
-            class="object-cover" />
+            class="object-cover w-full h-full" />
     </div>
 
     <div class="space-y-6">

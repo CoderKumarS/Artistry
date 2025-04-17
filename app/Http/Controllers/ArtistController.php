@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Artist;
 use App\Models\Artwork;
+use App\Models\User;
 class ArtistController extends Controller
 {
     // Handle the artist index logic
@@ -72,8 +73,6 @@ class ArtistController extends Controller
             'artwork' => $artwork
         ]);
     }
-
-    // Code for sending feedback to the admin mail
     public function submit(Request $request)
     {
         $request->validate([
@@ -92,5 +91,45 @@ class ArtistController extends Controller
         });
 
 
+    }
+    public function create($id)
+    {
+        $user = User::find($id);
+        return view('pages.create')->with([
+            'user' => $user,
+        ]);
+    }
+    public function register(Request $request)
+    {
+        $request->validate([
+            'description' => 'required|string|max:1000',
+            'profile' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'background' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'location' => 'required|string|max:1000',
+            'speciality' => 'required|string|max:1000',
+            'education' => 'required|string|max:1000',
+            'experience' => 'required|string|max:1000',
+        ]);
+        $user = Auth::user();
+        $artist = Artist::where('userId', $user->id)->first();
+
+        if (!$artist) {
+            $artist = new Artist();
+            $artist->userId = $user->id;
+            $artist->description = $request->input('description');
+            $artist->profile = $request->file('profile')->store('profiles', 'public');
+            $artist->background = $request->file('background')->store('backgrounds', 'public');
+            $artist->location = $request->input('location');
+            $artist->speciality = $request->input('speciality');
+            $artist->education = $request->input('education');
+            $artist->experience = $request->input('experience');
+            $artist->save();
+
+            return redirect()->route('dashboard')->with('success', 'Artist registered successfully');
+        }
+
+        return response()->json([
+            'message' => 'Artist already exists'
+        ]);
     }
 }

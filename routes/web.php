@@ -26,6 +26,8 @@ Route::controller(ArtistController::class)->group(function () {
     Route::post('/submit-feedback', 'submit')->name('feedback.submit');
     Route::get('/artists', 'index')->name('artists');
     Route::get('/artist/{id?}', 'profile')->name('artist.profile');
+    Route::get('/artist/{id?}/create', 'create')->name('artist.create');
+    Route::post('/artist/register', 'register')->name('artist.register');
 });
 
 Route::resource('/artworks', ArtworkController::class);

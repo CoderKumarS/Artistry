@@ -3,7 +3,19 @@
 @section('title', 'Login - Online Art Gallery')
 
 @section('content')
-    <div class="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900 py-12">
+    <div class="flex min-h-screen flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 py-12 relative">
+        @if ($errors->any())
+            <div id="error-messages" class="w-full max-w-md mb-6 absolute top-0 left-1/2 transform -translate-x-1/2 z-50">
+                <div
+                    class="bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-200 border border-red-400 dark:border-red-600 rounded-lg p-4">
+                    <div>
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
         <div id="login-form" class="w-full max-w-md px-4">
             <div
                 class="overflow-hidden rounded-lg border-[1px] border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
@@ -155,6 +167,18 @@
                         '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye text-muted-foreground"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
                 }
             });
+            const errorMessages = document.getElementById('error-messages');
+
+            if (errorMessages) {
+                setTimeout(() => {
+                    gsap.to(errorMessages, {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.5,
+                        onComplete: () => errorMessages.remove()
+                    });
+                }, 5000);
+            }
         });
     </script>
 @endpush

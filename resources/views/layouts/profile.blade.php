@@ -23,14 +23,22 @@
                         <img src="{{ $user['profile'] ?? 'https://placehold.co/100x100' }}" alt="{{ $user['name'] }}"
                             class="absolute inset-0 w-full h-full object-cover" />
                     </div>
-                    <div>
+                    <div class="flex flex-col items-start space-y-4">
                         <h1 class="text-2xl md:text-4xl font-bold">{{ $user['name'] }}</h1>
-                        <a href="{{ route('logout') }}">
-                            <x-button type='submit' class="w-full space-x-2 items-center justify-center">
-                                <x-lucide-log-out class="h-4 w-4" />
-                                <span>Logout</span>
-                            </x-button>
-                        </a>
+                        <div class="flex items-center space-x-2">
+                            <a href="{{ route('logout') }}" class="w-full">
+                                <x-button type='submit' class="w-full space-x-2 items-center justify-center">
+                                    <x-lucide-log-out class="h-4 w-4" />
+                                    <span>Logout</span>
+                                </x-button>
+                            </a>
+                            <a href="{{ route('artist.create', ['id' => $user['id']]) }}" class="w-full">
+                                <x-button type='secondary' class="w-full space-x-2 items-center justify-center text-black">
+                                    <x-lucide-plus class="h-4 w-4" />
+                                    <span>Become an Artist</span>
+                                </x-button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
