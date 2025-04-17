@@ -28,9 +28,6 @@
         @include('layouts.navigation')
 
         <main class="flex-1" id="main-content">
-            {{-- <div
-                class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg z-50 absolute"id="cursor">
-                A</div> --}}
             @yield('content')
         </main>
 
@@ -40,7 +37,6 @@
     @stack('scripts')
 </body>
 <script>
-    // Apply saved theme before content loads
     (function() {
         const theme = localStorage.getItem('theme');
         if (theme === 'dark') {

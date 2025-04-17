@@ -23,14 +23,6 @@ class ArtistController extends Controller
                     ->get(['id', 'title', 'image', 'created_at', 'rating']);
                 $allPaintings = Artwork::where('artistId', $artist->id)->get(['id', 'title', 'image']);
                 $averageRating = Artwork::where('artistId', $artist->id)->avg('rating');
-
-                // return response()->json([
-                //     'artist' => $artist,
-                //     'painting_count' => $paintingCount,
-                //     'latest_paintings' => $latestPaintings,
-                //     'all_paintings' => $allPaintings,
-                //     'average_rating' => $averageRating
-                // ]);
                 return view('layouts.dashboard')->with([
                     'artist' => $artist,
                     'painting_count' => $paintingCount,
@@ -39,7 +31,11 @@ class ArtistController extends Controller
                     'average_rating' => $averageRating
                 ]);
             } else {
-                return response()->json(['message' => 'Artist not found'], 404);
+                $artworks = Artwork::with('artist')->get()->take(5);
+                return view('layouts.profile')->with([
+                    'user' => $user,
+                    'artwork' => $artworks,
+                ]);
             }
         } else {
             return redirect()->route('login')->with('error', 'Please login to access the dashboard.');

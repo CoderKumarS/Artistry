@@ -1,8 +1,11 @@
 <div class="flex min-h-screen flex-col">
     <div
-        class="bg-gray-200 dark:bg-gray-900 text-[#1b1b18] dark:text-white flex p-6 lg:p-8 items-center justify-center min-h-screen flex-col">
+        class="relative bg-gray-50/30 dark:bg-gray-900/30 text-[#1b1b18] dark:text-white flex p-6 lg:p-8 items-center justify-center min-h-screen flex-col">
+        <div class="absolute inset-0 bg-cover bg-center z-[-1] brightness-100 contrast-100 dark:brightness-75 dark:contrast-125"
+            style="background-image: url('{{ asset('images/landing-bg.png') }}');">
+        </div>
         <div class="text-center max-w-lg">
-            <h1 class="text-4xl font-extrabold mb-6 leading-tight sm:text-5xl lg:text-6xl">
+            <h1 class="text-4xl font-extrabold mb-6 leading-tight sm:text-5xl lg:text-6xl text-black dark:text-white">
                 Welcome to <span class="text-blue-500 dark:text-blue-400">Artistry</span>
             </h1>
             <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">

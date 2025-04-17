@@ -1,4 +1,4 @@
-<nav class="bg-white dark:bg-gray-800 shadow px-16 md:px-16 sticky top-0 z-50">
+<nav class="bg-white/50 dark:bg-gray-800/50 shadow px-16 md:px-16 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto ">
         <div class="flex justify-between h-16">
             <!-- Brand Logo -->
