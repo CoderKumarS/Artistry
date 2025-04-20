@@ -68,7 +68,7 @@
     @case('artist')
         <div class="card bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer"
             onclick="window.location.href='{{ url('/artist/' . ($art['id'] ?? '#')) }}'">
-            <img src="https://placehold.co/300x300" alt="Artist Image" class="w-full h-48 object-cover">
+            <img src="{{ $art['profile'] }}" alt="Artist Image" class="w-full h-48 object-cover">
             <div class="p-4">
                 <h2 class="text-xl font-semibold mb-2">{{ $art['user']['name'] }}</h2>
                 <p class="text-gray-600 dark:text-gray-400">{{ $art['user']['email'] }}</p>

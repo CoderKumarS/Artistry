@@ -65,6 +65,11 @@ class HomeController extends Controller
     public function gallery()
     {
         $artworks = Artwork::with('artist.user')->get(); // Eager load the artist relationship
-        return view('pages.gallery')->with('artworks', $artworks);
+        $categories = Artwork::select('category')->distinct()->pluck('category');
+        $priceRange = [
+            'min' => Artwork::min('price'),
+            'max' => Artwork::max('price'),
+        ];
+        return view('pages.gallery')->with(['artworks' => $artworks, 'categories' => $categories, 'priceRange' => $priceRange]);
     }
 }
