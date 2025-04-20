@@ -24,11 +24,6 @@
     ],
     "builds": [
         {
-            "env": {
-                "APP_ENV": "production",
-                "APP_DEBUG": "true",
-                "APP_URL": "https://yourproductionurl.com"
-            },
             "commands": [
                 "composer install --no-dev --optimize-autoloader",
                 "php artisan optimize",
