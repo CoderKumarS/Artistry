@@ -40,3 +40,12 @@ Route::prefix('dashboard')->controller(ArtistController::class)->group(function 
     Route::get('/analytics', 'showDashboard')->name('dashboard.analytics');
     Route::get('/settings', 'showDashboard')->name('dashboard.settings');
 });
+
+Route::get('/test-mongo', function () {
+    try {
+        $users = \App\Models\User::all();
+        return response()->json($users);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()]);
+    }
+});

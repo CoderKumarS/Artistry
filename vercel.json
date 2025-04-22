@@ -24,11 +24,14 @@
     ],
     "builds": [
         {
-            "commands": [
-                "php artisan key:generate --force",
-                "php artisan migrate --force",
-                "php artisan db:seed --force"
-            ]
+            "src": "api/index.php",
+            "use": "@vercel/php",
+            "config": {
+                "commands": [
+                    "php artisan config:clear",
+                    "php artisan config:cache"
+                ]
+            }
         }
     ],
     "env": {
@@ -45,6 +48,10 @@
 
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+
+        "DB_CONNECTION": "mongodb",
+        "DB_URI": "mongodb+srv://user:root@cluster0.cypiqei.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Artistry",
+        "DB_DATABASE": "Artistry"
     }
 }
