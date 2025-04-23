@@ -24,21 +24,14 @@
     ],
     "builds": [
         {
-            "commands": [
-                "composer install --no-dev --optimize-autoloader",
-                "php artisan optimize",
-                "php artisan config:cache",
-                "php artisan route:cache",
-                "php artisan view:cache",
-                "php artisan event:cache",
-                "php artisan package:discover --ansi",
-                "php artisan storage:link",
-                "php artisan optimize:clear",
-                "php artisan optimize --force",
-                "php artisan migrate --force",
-                "php artisan db:seed --force",
-                "php artisan key:generate --force"
-            ]
+            "src": "api/index.php",
+            "use": "@vercel/php",
+            "config": {
+                "commands": [
+                    "php artisan config:clear",
+                    "php artisan config:cache"
+                ]
+            }
         }
     ],
     "env": {
