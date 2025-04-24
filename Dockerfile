@@ -20,9 +20,6 @@ RUN composer install --no-dev --prefer-dist
 # Install Node dependencies
 RUN npm install --omit=dev
 
-# Build assets using Vite
-RUN npm run build
-
 # Cache Laravel configuration
 RUN php artisan config:cache && php artisan route:cache
 
