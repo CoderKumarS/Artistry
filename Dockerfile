@@ -1,36 +1,20 @@
-# Use official PHP and Node.js image
-FROM php:8.2-fpm
-
-# Set working directory
-WORKDIR /var/www/html
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    curl zip unzip git nodejs npm
-
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Copy Laravel project files
-COPY . .
-
-# Install PHP dependencies
-RUN composer install --no-dev --prefer-dist
-
-# Install Node dependencies
-RUN npm install --omit=dev
-
-# Cache Laravel configuration
-RUN php artisan config:cache && php artisan route:cache
-
-# Rollback, migrate, and seed database
-RUN php artisan migrate:rollback && php artisan migrate --seed
-
-# Set correct permissions
-RUN chmod -R 775 storage bootstrap/cache
-
-# Expose Render's dynamic port
-EXPOSE $PORT
-
-# Start Laravel using Composer dev
-CMD ["sh", "-c", "PORT=${PORT} composer run dev"]
+FROM richarvey/nginx-php-fpm:1.7.2
+ 
+ COPY . .
+ 
+ # Image config
+ ENV SKIP_COMPOSER 1
+ ENV WEBROOT /var/www/html/public
+ ENV PHP_ERRORS_STDERR 1
+ ENV RUN_SCRIPTS 1
+ ENV REAL_IP_HEADER 1
+ 
+ # Laravel config
+ ENV APP_ENV production
+ ENV APP_DEBUG false
+ ENV LOG_CHANNEL stderr
+ 
+ # Allow composer to run as root
+ ENV COMPOSER_ALLOW_SUPERUSER 1
+ 
+ CMD ["/start.sh"]
