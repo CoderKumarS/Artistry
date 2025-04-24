@@ -1,11 +1,20 @@
 #!/bin/bash
 
-# Exit immediately if a command fails
+# Exit immediately if a command exits with a non-zero status
 set -e
+
+# Install PHP
+sudo apt update && sudo apt install -y php-cli unzip
+
+# Verify PHP installation
+php -v
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
+
+# Verify Composer installation
+composer --version
 
 # Install PHP dependencies
 composer install --no-dev
