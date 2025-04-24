@@ -6,10 +6,12 @@
         <h1 class="text-3xl font-bold tracking-tight md:text-4xl mb-6 text-gray-800 dark:text-gray-200">Art Gallery</h1>
         <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-4">
             <div class="relative w-full sm:max-w-sm">
-                <x-lucide-search class="absolute left-2.5 top-2.5 h-4 w-4 text-gray-200" />
-                <input type="search" placeholder="Search paintings or artists..."
-                    class="w-full pl-8 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500 px-2 py-2"
-                    value="{{ request('searchTerm') }}" name="searchTerm" />
+                <form method="GET" action="{{ route('gallery') }}" class="relative">
+                    <x-lucide-search class="absolute left-2.5 top-2.5 h-4 w-4 text-gray-400" />
+                    <input type="search" placeholder="Search paintings or artists..."
+                        class="w-full pl-8 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500 px-2 py-2"
+                        value="{{ request('searchTerm') }}" name="searchTerm" />
+                </form>
             </div>
             <div class="flex items-center gap-2">
                 <form method="GET" action="{{ route('gallery') }}" class="flex items-center gap-2">
@@ -33,7 +35,7 @@
                     <x-lucide-filter class="h-4 w-4 dark:text-gray-200" />
                 </button>
             </div>
-            <div id="filterModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+            <div id="filterModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 items-center justify-center">
                 <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
                     <h3 class="text-lg font-medium mb-4">Filter Artwork</h3>
                     <div class="space-y-4">
@@ -118,5 +120,11 @@
             }
             window.location.href = url.toString();
         }
+        const searchInput = document.querySelector('input[name="searchTerm"]');
+        searchInput.addEventListener('input', function() {
+            const url = new URL(window.location.href);
+            url.searchParams.set('searchTerm', this.value);
+            window.history.replaceState({}, '', url.toString());
+        });
     </script>
 @endpush

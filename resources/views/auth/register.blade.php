@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Register - Online Art Gallery')
 @section('content')
-    <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div
+        class="min-h-screen flex items-center justify-center flex-col bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
         @if ($errors->any())
-            <div class="w-full max-w-md mb-6">
+            <div class="w-full max-w-md mb-6" id="error-alert">
                 <div
                     class="bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-200 border border-red-400 dark:border-red-600 rounded-lg p-4">
                     <ul class="list-disc list-inside">
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <li class="list-none">{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -53,3 +54,21 @@
     </div>
 
 @endsection
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorAlert = document.getElementById('error-alert');
+
+            if (errorAlert) {
+                setTimeout(() => {
+                    gsap.to(errorAlert, {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.5,
+                        onComplete: () => errorAlert.remove()
+                    });
+                }, 5000);
+            }
+        });
+    </script>
+@endpush
