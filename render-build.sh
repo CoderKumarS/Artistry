@@ -1,26 +1,29 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status
+# Exit immediately if a command fails
 set -e
 
-# Install PHP
-sudo apt update && sudo apt install -y php-cli unzip
+# Update package lists and install PHP without sudo
+apt-get update && apt-get install -y php-cli unzip
 
 # Verify PHP installation
-php -v
+php -v || { echo "PHP installation failed"; exit 1; }
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
+mv composer.phar /usr/local/bin/composer
 
 # Verify Composer installation
-composer --version
+composer --version || { echo "Composer installation failed"; exit 1; }
 
 # Install PHP dependencies
-composer install --no-dev
+composer install --no-dev --prefer-dist
 
 # Install Node dependencies
-npm install
+npm install --omit=dev
+
+# Set correct permissions
+chmod -R 775 storage bootstrap/cache
 
 # Run database migrations
 php artisan migrate --force
