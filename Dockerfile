@@ -23,11 +23,14 @@ RUN npm install --omit=dev
 # Cache Laravel configuration
 RUN php artisan config:cache && php artisan route:cache
 
+# Run database migrations
+RUN php artisan migrate --force
+
 # Set correct permissions
 RUN chmod -R 775 storage bootstrap/cache
 
 # Expose ports
-EXPOSE 9000
+EXPOSE $PORT
 
 # Start Laravel using your `composer dev` command
-CMD ["composer", "run-script", "dev"]
+CMD ["sh", "-c", "PORT=${PORT} composer run dev"]
