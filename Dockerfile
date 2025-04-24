@@ -1,4 +1,4 @@
-# Use official PHP and Node image
+# Use official PHP and Node.js image
 FROM php:8.2-fpm
 
 # Set working directory
@@ -20,17 +20,20 @@ RUN composer install --no-dev --prefer-dist
 # Install Node dependencies
 RUN npm install --omit=dev
 
+# Build assets using Vite
+RUN npm run build
+
 # Cache Laravel configuration
 RUN php artisan config:cache && php artisan route:cache
 
-# Run database migrations
-RUN php artisan migrate --force
+# Rollback, migrate, and seed database
+RUN php artisan migrate:rollback && php artisan migrate --seed
 
 # Set correct permissions
 RUN chmod -R 775 storage bootstrap/cache
 
-# Expose ports
+# Expose Render's dynamic port
 EXPOSE $PORT
 
-# Start Laravel using your `composer dev` command
+# Start Laravel using Composer dev
 CMD ["sh", "-c", "PORT=${PORT} composer run dev"]
