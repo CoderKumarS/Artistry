@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Model;
-use MongoDB\Laravel\Eloquent\Model as Eloquent;
-class Artist extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+class Artist extends Model
 {
     public function user()
     {
